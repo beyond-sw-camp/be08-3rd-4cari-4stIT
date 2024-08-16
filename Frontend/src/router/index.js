@@ -18,7 +18,7 @@ const router = createRouter({
       component: Bookmark
     },
     {
-      path: '/news/:newsNo',
+      path: '/detail/:newsNo',
       name: 'Newsdetails',
       component: Newsdetails
     },
