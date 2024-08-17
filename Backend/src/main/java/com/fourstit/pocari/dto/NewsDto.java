@@ -30,6 +30,8 @@ public class NewsDto {
 
     private String title;
 
+    private long categoryId;
+
     public static NewsDto fromEntity(News news) {
         NewsDto newsDto = new NewsDto();
         newsDto.setId(news.getNewsId());
@@ -40,6 +42,7 @@ public class NewsDto {
         newsDto.setNewsPaper(news.getNewspaper());
         newsDto.setSummary(news.getSummary());
         newsDto.setTitle(news.getTitle());
+        newsDto.setCategoryId(news.getCategoryId());
         return newsDto;
     }
 
@@ -53,6 +56,7 @@ public class NewsDto {
         news.setNewspaper(this.getNewsPaper());
         news.setSummary(this.getSummary());
         news.setTitle(this.getTitle());
+        news.setCategoryId(news.getCategoryId());
         return news;
     }
 
