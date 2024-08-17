@@ -75,7 +75,7 @@ export default {
       }
 
       try {
-        await axios.post('http://localhost:8080/api/bookmark', {
+        await axios.post('http://localhost:8080/api/createbookmark', {
           userId: userStore.user.id,
           newsId: route.params.newsNo
         });
