@@ -24,7 +24,7 @@ public class News {
     @Column(name = "title", nullable = false)
     private String title; // 제목
 
-    @Column(name = "content", nullable = false)
+    @Column(name = "content", columnDefinition = "text", nullable = false)
     private String content; // 상세내용
 
     @Column(name = "category_id")
