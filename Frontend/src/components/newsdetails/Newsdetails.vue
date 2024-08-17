@@ -12,7 +12,7 @@
         </div>
         <div class="right">
           <span class="views">조회수</span>
-          <button class="bookmark">북마크에 추가</button>
+          <button @click="createBookmark" class="bookmark">북마크에 추가</button>
         </div>
       </div>
 
@@ -56,9 +56,40 @@
 
 import axios from 'axios';
 import '@/components/newsdetails/Newsdetails.css'
+import { useRouter, useRoute } from 'vue-router';
+import { useUserStore } from '@/store/user';
 
 export default {
   name: "DetailNews",
+  setup(){
+    const userStore = useUserStore();
+    const router = useRouter();
+    const route = useRoute();
+
+    const createBookmark = async () => {
+      if (!userStore.isLogIn) {
+        alert('로그인이 필요합니다.');
+        router.push('/login');
+        
+        return;
+      }
+
+      try {
+        await axios.post('http://localhost:8080/api/createbookmark', {
+          userId: userStore.user.id,
+          newsId: route.params.newsNo
+        });
+        
+        alert("북마크 추가 완료");
+      } catch (error) {
+        console.error('북마크 추가 실패:', error);
+      }
+    };
+    return {
+      createBookmark,
+    };
+  },
+
   data() {
     return {
       news: {}// api로부터 받은 데이터 저장
