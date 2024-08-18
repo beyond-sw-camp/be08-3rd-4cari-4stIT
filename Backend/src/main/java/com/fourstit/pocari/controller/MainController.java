@@ -13,6 +13,7 @@ import com.fourstit.pocari.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -65,6 +66,21 @@ public class MainController {
 
             return ResponseEntity.ok("");
         }
+    }
+    
+    @Transactional
+    @DeleteMapping("/deletebookmark")
+    public ResponseEntity<String> deleteBookmark(@RequestParam Long userId, @RequestParam Long newsId) {
+        userRepository.findById(userId);
+        newsRepository.findById(newsId);
+
+        if(bookmarkRepository.existsByUserIdAndNewsId(userId, newsId)) {
+            bookmarkRepository.deleteByUserIdAndNewsId(userId, newsId);
+            return ResponseEntity.ok("");
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("사용자 북마크에 해당 뉴스가 존재하지 않음");
+        }
+
     }
 
     @GetMapping("/detail/{newsNo}")
