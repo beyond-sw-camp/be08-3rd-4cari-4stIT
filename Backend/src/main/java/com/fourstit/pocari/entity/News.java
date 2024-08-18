@@ -44,4 +44,7 @@ public class News {
 
     @Column(name = "image", nullable = false)
     private String image;
+
+    @Column(name = "views")
+    private int views;
 }

@@ -3,6 +3,7 @@ package com.fourstit.pocari.controller;
 import com.fourstit.pocari.dto.BookmarkDto;
 import com.fourstit.pocari.dto.BookmarkRequestDto;
 import com.fourstit.pocari.dto.NewsDto;
+import com.fourstit.pocari.dto.UserDto;
 import com.fourstit.pocari.entity.Bookmark;
 import com.fourstit.pocari.entity.News;
 import com.fourstit.pocari.entity.User;
@@ -37,7 +38,7 @@ public class MainController {
     @GetMapping("/bookmark/{userNo}")
     public List<BookmarkDto> bookmarkList(@PathVariable("userNo") Long userId) {
 
-        return  bookmarkRepository.findAllByUserId(userId);
+        return bookmarkRepository.findAllByUserId(userId);
     }
 
     @PostMapping("/createbookmark")
@@ -71,6 +72,31 @@ public class MainController {
         News news = newsRepository.findById(newsId)
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 뉴스: " + newsId));
         return NewsDto.fromEntity(news);
+    }
+
+    @PostMapping("/join")
+    public ResponseEntity<String> joinUser(@RequestBody UserDto userDto) {
+        User user = new User();
+        user.setId(userDto.getId());
+        user.setPwd(userDto.getPwd());
+        user.setEmail(userDto.getEmail());
+        user.setName(userDto.getName());
+        user.setBirth(userDto.getBirth());
+        user.setGender(userDto.getGender());
+        user.setPhone(userDto.getPhone());
+
+        StringBuilder interest = new StringBuilder();
+
+        for (String str : userDto.getInterest()) {
+            interest.append(str).append(",");
+        }
+
+        user.setInterest(interest.toString());
+
+        userRepository.save(user);
+
+        // 성공 응답
+        return ResponseEntity.ok("User registration successful");
     }
 
     //Todo: 뉴스 작성, 여유있으면 프론트 구현 @uzz99

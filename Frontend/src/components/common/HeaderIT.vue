@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-navbar fixed-top" >
         <div class="container px-lg-5">
-            <RouterLink class="navbar-brand" :to="{name: 'main'}" assets>4ST-IT</RouterLink>
+            <RouterLink class="navbar-brand" :to="{name: 'main'}" assets style="font-size: 20px;">4ST-IT</RouterLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -16,10 +16,10 @@
             </div>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#!">회원가입</a>
+                <a class="nav-link" aria-current="page" href="#!" style="font-size: 15px;">회원가입</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#!">로그인</a>
+                <a class="nav-link" href="#!" style="font-size: 15px;">로그인</a>
                 </li>
             </ul>
             </div>
