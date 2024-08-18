@@ -5,7 +5,7 @@ import axios from 'axios';
 import store from './store/index';
 
 // 테스트용 임포트
-// import { useUserStore } from '@/store/user';
+import { useUserStore } from '@/store/user';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -25,5 +25,5 @@ app.mount('#app');
 // store.commit('restoreUser');
 
 // 테스트용
-// const userStore = useUserStore();
-// userStore.setUser({ id: 1 });
+const userStore = useUserStore();
+userStore.setUser({ id: 1 });
