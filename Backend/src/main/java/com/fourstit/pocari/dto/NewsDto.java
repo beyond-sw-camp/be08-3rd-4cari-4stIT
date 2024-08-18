@@ -32,6 +32,8 @@ public class NewsDto {
 
     private long categoryId;
 
+    private int views;
+
     public static NewsDto fromEntity(News news) {
         NewsDto newsDto = new NewsDto();
         newsDto.setId(news.getNewsId());
@@ -43,6 +45,7 @@ public class NewsDto {
         newsDto.setSummary(news.getSummary());
         newsDto.setTitle(news.getTitle());
         newsDto.setCategoryId(news.getCategoryId());
+        newsDto.setViews(news.getViews());
         return newsDto;
     }
 
@@ -57,6 +60,7 @@ public class NewsDto {
         news.setSummary(this.getSummary());
         news.setTitle(this.getTitle());
         news.setCategoryId(news.getCategoryId());
+        news.setViews(this.getViews());
         return news;
     }
 

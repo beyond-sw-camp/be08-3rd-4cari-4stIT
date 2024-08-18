@@ -11,7 +11,7 @@
           <span class="author">{{news.author}} 기자</span>
         </div>
         <div class="right">
-          <span class="views">조회수</span>
+          <span class="views">조회수 {{ news.views }}</span>
           <button @click="createBookmark" class="bookmark">북마크에 추가</button>
         </div>
       </div>
@@ -116,6 +116,13 @@ export default {
       } catch (error) {
         console.error("존재하지 않는 뉴스입니다. : ", error);
       }
+    },
+    getNewsById(id) {
+          NewsService.getNewsById(id).then(response => {
+            this.newsList = [response.data];
+          }).catch(error => {
+            console.error("There was an error!", error);
+          });
     }
   },
   
