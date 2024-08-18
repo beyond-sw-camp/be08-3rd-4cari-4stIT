@@ -28,24 +28,31 @@ import { defineComponent, ref, onMounted, watch } from 'vue';
 import NewsService from '@/services/NewsService';
 import HeaderIT from './common/HeaderIT.vue';
 import { useRoute } from 'vue-router';
+import { useUserStore } from '@/store/user';
 
 export default defineComponent({
   components: {
-    HeaderIT
+    HeaderIT,
   },
   setup() {
+    const userStore = useUserStore();
     const newsList = ref([]);
     const route = useRoute();
 
     // Function to fetch news based on search query
     const searchNews = async (query) => {
       try {
-        if (query) {
-          const response = await NewsService.searchNews(query);
+        if (userStore.isLogIn) {
+          const response = await NewsService.getNewsById(userStore.user.id);
           newsList.value = response.data;
         } else {
-          const response = await NewsService.getNewsList();
-          newsList.value = response.data;
+          if (query) {
+            const response = await NewsService.searchNews(query);
+            newsList.value = response.data;
+          } else {
+            const response = await NewsService.getNewsList();
+            newsList.value = response.data;
+          }
         }
       } catch (error) {
         console.error('Error fetching news:', error);
@@ -59,15 +66,18 @@ export default defineComponent({
     });
 
     // Watch for changes in the search query to re-fetch search results
-    watch(() => route.query.search, (newSearchQuery) => {
-      searchQuery.value = newSearchQuery || '';
-      searchNews(searchQuery.value);
-    });
+    watch(
+      () => route.query.search,
+      (newSearchQuery) => {
+        searchQuery.value = newSearchQuery || '';
+        searchNews(searchQuery.value);
+      }
+    );
 
     return {
-      newsList
+      newsList,
     };
-  }
+  },
 });
 </script>
 

@@ -35,7 +35,6 @@ const router = createRouter({
   ],
 });
 
-
 // 경로 대문자로 받아도 소문자로 바꾸는 로직
 router.beforeEach((to, from, next) => {
   const path = to.path.toLowerCase();
