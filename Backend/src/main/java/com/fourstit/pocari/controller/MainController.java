@@ -67,7 +67,7 @@ public class MainController {
             return ResponseEntity.ok("");
         }
     }
-    
+
     @Transactional
     @DeleteMapping("/deletebookmark")
     public ResponseEntity<String> deleteBookmark(@RequestParam Long userId, @RequestParam Long newsId) {
@@ -87,6 +87,10 @@ public class MainController {
     public NewsDto getNewsById(@PathVariable("newsNo") Long newsId) {
         News news = newsRepository.findById(newsId)
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 뉴스: " + newsId));
+
+        news.setViews(news.getViews() + 1);
+        newsRepository.save(news);
+
         return NewsDto.fromEntity(news);
     }
 
