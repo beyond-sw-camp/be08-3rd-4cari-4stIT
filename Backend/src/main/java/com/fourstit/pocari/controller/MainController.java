@@ -5,18 +5,23 @@ import com.fourstit.pocari.dto.BookmarkRequestDto;
 import com.fourstit.pocari.dto.NewsDto;
 import com.fourstit.pocari.dto.UserDto;
 import com.fourstit.pocari.entity.Bookmark;
+import com.fourstit.pocari.entity.Category;
 import com.fourstit.pocari.entity.News;
 import com.fourstit.pocari.entity.User;
 import com.fourstit.pocari.repository.BookmarkRepository;
+import com.fourstit.pocari.repository.CategoryRepository;
 import com.fourstit.pocari.repository.NewsRepository;
 import com.fourstit.pocari.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -27,9 +32,11 @@ import java.util.stream.Collectors;
 @CrossOrigin("http://localhost:5173/")
 public class MainController {
 
+    private static final Logger log = LoggerFactory.getLogger(MainController.class);
     private final UserRepository userRepository;
     private final NewsRepository newsRepository;
     private final BookmarkRepository bookmarkRepository;
+    private final CategoryRepository categoryRepository;
 
 
     @GetMapping("/main")
@@ -45,6 +52,16 @@ public class MainController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/main/{userNo}")
+    public List<News> searchNews(@PathVariable("userNo") Long userNo) {
+        User user = userRepository.findById(userNo).orElseThrow();
+        List<Integer> categoryIds = Arrays.stream(user.getInterest().split(","))
+                .map(Integer::parseInt)
+                .toList();
+
+        return newsRepository.findByCategoryIdIn(categoryIds);
+    }
+
     @GetMapping("/bookmark/{userNo}")
     public List<BookmarkDto> bookmarkList(@PathVariable("userNo") Long userId) {
 
@@ -57,11 +74,11 @@ public class MainController {
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자: " + requestDto.getUserId()));
         News news = newsRepository.findById(requestDto.getNewsId())
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 뉴스: " + requestDto.getNewsId()));
-        
+
         Optional<Bookmark> optionalBookmark = bookmarkRepository.findByUserIdAndNewsId(user.getUserNo(), news.getNewsId());
 
         System.out.println("optionalBookmark = " + optionalBookmark);
-        if(optionalBookmark.isPresent()) {
+        if (optionalBookmark.isPresent()) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("이미 추가된 뉴스입니다.");
         } else {
             Bookmark bookmark = new Bookmark();
@@ -80,10 +97,10 @@ public class MainController {
         userRepository.findById(userId);
         newsRepository.findById(newsId);
 
-        if(bookmarkRepository.existsByUserIdAndNewsId(userId, newsId)) {
+        if (bookmarkRepository.existsByUserIdAndNewsId(userId, newsId)) {
             bookmarkRepository.deleteByUserIdAndNewsId(userId, newsId);
             return ResponseEntity.ok("");
-        }else{
+        } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("사용자 북마크에 해당 뉴스가 존재하지 않음");
         }
 
@@ -98,6 +115,19 @@ public class MainController {
         newsRepository.save(news);
 
         return NewsDto.fromEntity(news);
+    }
+
+    @GetMapping("/categories")
+    public ResponseEntity<List<Category>> getCategories() {
+        List<Category> list = categoryRepository.findAll();
+
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/user/check-userid")
+    public ResponseEntity<Boolean> getChkUserId(@RequestParam String userId) {
+        boolean isDuplicate = userRepository.existsById(userId);
+        return ResponseEntity.ok(isDuplicate);
     }
 
     @PostMapping("/join")
@@ -117,12 +147,14 @@ public class MainController {
             interest.append(str).append(",");
         }
 
+        interest.deleteCharAt(interest.length() - 1);
+
         user.setInterest(interest.toString());
 
         userRepository.save(user);
 
         // 성공 응답
-        return ResponseEntity.ok("User registration successful");
+        return ResponseEntity.status(HttpStatus.CREATED).body("");
     }
 
     //Todo: 뉴스 작성, 여유있으면 프론트 구현 @uzz99

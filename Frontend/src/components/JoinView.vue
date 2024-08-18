@@ -4,7 +4,11 @@
     <form @submit.prevent="submitForm">
       <div class="form-group">
         <label for="id">아이디</label>
-        <input type="text" v-model="form.id" id="id" required />
+        <input type="text" v-model="form.id" id="id" required :disabled="usernameChecked" />
+        <button id="btn-idChk" type="button" @click="checkUsername">중복 확인</button>
+        <span v-if="usernameCheckMessage" :class="{ 'text-success': !isUsernameDuplicate, 'text-danger': isUsernameDuplicate }">
+          {{ usernameCheckMessage }}
+        </span>
       </div>
 
       <div class="form-group">
@@ -46,7 +50,7 @@
         <input type="tel" v-model="form.phone" id="phone" required />
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="interest">관심사</label>
         <select name="interest" v-model="form.interest" id="interest" multiple size="3">
           <option value="web">웹개발</option>
@@ -56,9 +60,17 @@
           <option value="security">보안</option>
           <option value="network">네트워크</option>
         </select>
+      </div> -->
+      <div class="form-group">
+        <label for="interest">관심사</label>
+        <select name="interest" v-model="form.interest" id="interest" multiple size="5">
+          <option v-for="category in categories" :key="category.categoryId" :value="category.categoryId">
+            {{ category.name }}
+          </option>
+        </select>
       </div>
 
-      <button type="submit">회원가입</button>
+      <button type="submit" :disabled="!usernameChecked">회원가입</button>
     </form>
   </div>
 </template>
@@ -79,21 +91,62 @@ export default {
         phone: '',
         interest: [],
       },
+      categories: [],
+      isUsernameDuplicate: false, // 아이디 중복 여부
+      usernameCheckMessage: '', // 중복 확인 메시지
+      usernameChecked: false, // 중복 확인 완료 여부
     };
   },
+  created() {
+    this.fetchCategories();
+  },
   methods: {
+    async fetchCategories() {
+      try {
+        const response = await axios.get('http://localhost:8080/api/categories');
+        this.categories = response.data;
+      } catch (error) {
+        console.error('카테고리 데이터를 불러오는 중 오류가 발생했습니다:', error);
+      }
+    },
+    async checkUsername() {
+      if (!this.form.id) {
+        this.usernameCheckMessage = '아이디를 입력해주세요.';
+        return;
+      }
+      try {
+        const response = await axios.get('http://localhost:8080/api/user/check-userid', {
+          params: { userId: this.form.id },
+        });
+        this.isUsernameDuplicate = response.data;
+
+        if (this.isUsernameDuplicate) {
+          this.usernameCheckMessage = '이미 사용 중인 아이디입니다.';
+          this.usernameChecked = false;
+        } else {
+          this.usernameCheckMessage = '사용 가능한 아이디입니다.';
+          this.usernameChecked = true;
+        }
+      } catch (error) {
+        console.error('아이디 중복 확인 중 오류가 발생했습니다:', error);
+        this.usernameCheckMessage = '오류가 발생했습니다. 다시 시도해 주세요.';
+      }
+      console.log(this.form.id + this.usernameCheckMessage + '작동' + this.usernameChecked);
+    },
     async submitForm() {
+      if (!this.usernameChecked) {
+        alert('아이디 중복 확인을 해주세요.');
+        return;
+      }
+
       try {
         const response = await axios.post('http://localhost:8080/api/join', this.form);
 
-        // 서버 응답이 성공적일 때 처리
-        if (response.status === 200) {
+        if (response.status === 201) {
           alert('회원가입이 완료되었습니다!');
-          // 원하는 페이지로 리디렉션하거나 폼을 초기화할 수 있습니다.
-          this.$router.push('/login'); // 예: 회원가입 후 로그인 페이지로 이동
+          this.$router.push('/login');
         }
       } catch (error) {
-        // 오류 처리
         console.error('회원가입 중 오류가 발생했습니다:', error);
         alert('회원가입에 실패했습니다. 다시 시도해 주세요.');
       }
@@ -145,7 +198,33 @@ button[type='submit'] {
   cursor: pointer;
 }
 
-button[type='submit']:hover {
+#id {
+  width: 80%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+#btn-idChk {
+  width: 15%;
+  height: 30px;
+  background-color: #93bfcf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type='submit']:hover,
+button[type='button']:hover {
   background-color: #bdcdd6;
+}
+
+.text-success {
+  color: green;
+}
+
+.text-danger {
+  color: red;
 }
 </style>
