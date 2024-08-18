@@ -82,7 +82,11 @@ export default {
         
         alert("북마크 추가 완료");
       } catch (error) {
+        if (error.response && error.response.status === 409) {
+        alert('이미 추가된 뉴스입니다.');
+      } else {
         console.error('북마크 추가 실패:', error);
+      }
       }
     };
     return {

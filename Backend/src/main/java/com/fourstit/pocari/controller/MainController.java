@@ -10,11 +10,13 @@ import com.fourstit.pocari.repository.BookmarkRepository;
 import com.fourstit.pocari.repository.NewsRepository;
 import com.fourstit.pocari.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -45,13 +47,23 @@ public class MainController {
         News news = newsRepository.findById(requestDto.getNewsId())
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 뉴스: " + requestDto.getNewsId()));
 
-        Bookmark bookmark = new Bookmark();
-        bookmark.setUserId(user.getUserNo());
-        bookmark.setNewsId(news.getNewsId());
-        bookmark.setCreatedDate(LocalDateTime.now());
-        bookmarkRepository.save(bookmark);
+        System.out.println("user.getUserNo() = " + user.getUserNo());
+        System.out.println("news.getNewsId() = " + news.getNewsId());
+        
+        Optional<Bookmark> optionalBookmark = bookmarkRepository.findByUserIdAndNewsId(user.getUserNo(), news.getNewsId());
 
-        return ResponseEntity.ok("");
+        System.out.println("optionalBookmark = " + optionalBookmark);
+        if(optionalBookmark.isPresent()) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("이미 추가된 뉴스입니다.");
+        } else {
+            Bookmark bookmark = new Bookmark();
+            bookmark.setUserId(user.getUserNo());
+            bookmark.setNewsId(news.getNewsId());
+            bookmark.setCreatedDate(LocalDateTime.now());
+            bookmarkRepository.save(bookmark);
+
+            return ResponseEntity.ok("");
+        }
     }
 
     @GetMapping("/detail/{newsNo}")

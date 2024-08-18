@@ -2,55 +2,49 @@
     <div>
         <div class="container">
             <h3>북마크한 뉴스</h3>
-            <div v-for="(item, index) in bookmarkList" :key="index" class="news-item">
-            <a :href="item.link">
-                <img :src="item.newsImage" :alt="'뉴스 이미지 ' + (index + 1)" />
-            </a>
-            <div class="news-item-content">
-                <h4>
-                <a :href="item.link">{{ item.newsTitle }}</a>
-                </h4>
-                <p>{{ item.newsSummary }}</p>
-            </div>
+            <div class="news-grid">
+                <div v-for="(item, index) in bookmarkList" :key="index" class="news-item">
+                    <router-link :to="`/detail/${item.newsId}`">
+                        <img :src="item.newsImage" :alt="'뉴스 이미지 ' + (index + 1)" />
+                    </router-link>
+                    <div class="news-item-content">
+                        <h4>
+                            <router-link :to="`/detail/${item.newsId}`">{{ item.newsTitle }}</router-link>
+                        </h4>
+                        <p>{{ item.newsSummary }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import FooterIT from "./common/FooterIT.vue";
-import HeaderIT from "./common/HeaderIT.vue";
 import axios from "axios";
+import { useUserStore } from '@/store/user';
 
 export default {
     name: "Bookmark",
-    components: {
-    HeaderIT,
-    FooterIT,
-    },
     data() {
         return {
             bookmarkList: [],
-            searchQuery: "",
         };
     },
     methods: {
-    handleSearch() {
-        console.log(this.searchQuery);
-    },
-    async fetchBookmarkList() {
-        try{
-            const userNo = 1; // 예를 들어, 현재 로그인한 사용자 ID를 1로 가정
-            const response = await axios.get(`http://localhost:8080/api/bookmark/${userNo}`);
-            this.bookmarkList = response.data;
-        } catch (error) {
-            console.error('북마크를 가져오는 데 실패했습니다:', error);
-        }
-    }
+        async fetchBookmarkList() {
+            try {
+                const userStore = useUserStore();
+                const userNo = userStore.user.id;
+                const response = await axios.get(`http://localhost:8080/api/bookmark/${userNo}`);
+                this.bookmarkList = response.data;
+            } catch (error) {
+                console.error("북마크를 가져오는 데 실패했습니다:", error);
+            }
+        },
     },
     created() {
         this.fetchBookmarkList();
-    }
+    },
 };
 </script>
 
@@ -82,9 +76,7 @@ body {
     border-radius: 10px;
     width: 100%;
     max-width: 1050px;
-    height: 850px;
-    overflow-y: auto;
-    margin: 0 auto; /* 좌우 중앙 정렬 */
+    margin: 0 auto;
     margin-bottom: 20px;
     margin-top: 80px;
 }
@@ -93,31 +85,49 @@ h3 {
     color: #333333;
 }
 
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
 .news-item {
     background-color: #fff;
     border: 1px solid #bdc3c7;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
-    margin-bottom: 10px;
     display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
+    flex-direction: column;
     box-sizing: border-box;
+    transition: box-shadow 0.3s;
+}
+
+.news-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .news-item img {
-    max-width: 150px;
+    width: 100%;
     height: auto;
-    margin-right: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .news-item-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .news-item h4 {
-    margin-top: 0;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.news-item p {
+    flex: 1;
+    margin: 10px 0 0 0;
+    color: #555;
 }
 
 .news-item a {
@@ -128,5 +138,4 @@ h3 {
 .news-item a:hover {
     text-decoration: underline;
 }
-
 </style>
