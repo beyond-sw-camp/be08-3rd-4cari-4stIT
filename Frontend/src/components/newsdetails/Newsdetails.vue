@@ -44,7 +44,7 @@
       </div>
       
       <div class="back-to-list">
-        <router-link to="/main" class="back-button">목록으로 돌아가기</router-link>
+        <router-link :to="backToList" class="back-button">목록으로 돌아가기</router-link>
       </div>
 
     </div>
@@ -58,6 +58,7 @@ import axios from 'axios';
 import '@/components/newsdetails/Newsdetails.css'
 import { useRouter, useRoute } from 'vue-router';
 import { useUserStore } from '@/store/user';
+import { computed } from 'vue';
 
 export default {
   name: "DetailNews",
@@ -85,8 +86,14 @@ export default {
         console.error('북마크 추가 실패:', error);
       }
     };
+
+    const backToList = computed(() => {
+      return userStore.isLogIn ? '/bookmark' : '/';
+    });
+
     return {
       createBookmark,
+      backToList
     };
   },
 
@@ -95,9 +102,11 @@ export default {
       news: {}// api로부터 받은 데이터 저장
     };
   },
+  
   created() {
     this.fetchNewsDetail();
   },
+
   methods: {
     async fetchNewsDetail() {
       try {
@@ -109,6 +118,7 @@ export default {
       }
     }
   },
+  
   computed: {
     splitContent() {
       // 문장마다 나누기
