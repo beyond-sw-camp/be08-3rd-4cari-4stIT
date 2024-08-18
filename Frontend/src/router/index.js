@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Bookmark from '@/components/Bookmark.vue';
 import MainIT from '@/components/MainIT.vue';
 import Newsdetails from '@/components/newsdetails/Newsdetails.vue';
+import JoinView from '@/components/JoinView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,6 +36,14 @@ public class MainController {
         return newsRepository.findAll();
     }
 
+    @GetMapping("/main/search")
+    public List<News> searchNews(@RequestParam String query) {
+        return newsRepository.findAll().stream()
+                .filter(news -> news.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                        news.getContent().toLowerCase().contains(query.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/bookmark/{userNo}")
     public List<BookmarkDto> bookmarkList(@PathVariable("userNo") Long userId) {
 
@@ -47,9 +56,6 @@ public class MainController {
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자: " + requestDto.getUserId()));
         News news = newsRepository.findById(requestDto.getNewsId())
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 뉴스: " + requestDto.getNewsId()));
-
-        System.out.println("user.getUserNo() = " + user.getUserNo());
-        System.out.println("news.getNewsId() = " + news.getNewsId());
         
         Optional<Bookmark> optionalBookmark = bookmarkRepository.findByUserIdAndNewsId(user.getUserNo(), news.getNewsId());
 
