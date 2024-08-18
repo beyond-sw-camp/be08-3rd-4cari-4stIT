@@ -4,6 +4,7 @@ import Bookmark from '@/components/Bookmark.vue';
 import MainIT from '@/components/MainIT.vue';
 import Newsdetails from '@/components/newsdetails/Newsdetails.vue';
 import JoinView from '@/components/JoinView.vue';
+import MyPageView from '@/components/MyPageView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/join',
       name: 'JoinView',
       component: JoinView,
+    },
+    {
+      path: '/mypage', 
+      name: 'MyPageView',
+      component: MyPageView,
     },
     {
       path: '/:catchAll(.*)', // 와일드카드 라우트
