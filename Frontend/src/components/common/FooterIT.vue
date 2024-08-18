@@ -2,8 +2,8 @@
     <footer class="custom-footer">
         <div class="container">
             <div class="d-flex flex-column align-items-center">
-            <p class="footer-text">© {{ currentYear }} 4ST-IT All rights reserved.</p>
-            <p class="footer-date-time">{{ currentDate }} || {{ currentTime }}</p>
+            <p class="footer-text" style="font-size: 15px">© {{ currentYear }} 4ST-IT All rights reserved.</p>
+            <p class="footer-date-time" style="font-size: 15px">{{ currentDate }} || {{ currentTime }}</p>
             </div>
         </div>
     </footer>
