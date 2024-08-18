@@ -38,6 +38,25 @@ public class MainController {
     private final BookmarkRepository bookmarkRepository;
     private final CategoryRepository categoryRepository;
 
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody UserDto userDto) {
+        // 사용자의 ID가 존재하는지 확인
+        if (userRepository.existsById(userDto.getId())) {
+            // ID로 사용자를 조회 (필요한 경우 쿼리 추가 가능)
+            List<User> users = userRepository.findAll(); // 모든 사용자 가져오기
+            for (User user : users) {
+                if (user.getId().equals(userDto.getId()) && user.getPwd().equals(userDto.getPwd())) {
+                    // 로그인 성공 시
+                    return ResponseEntity.ok("Login successful");
+                }
+            }
+            // 비밀번호가 일치하지 않을 경우
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid password");
+        } else {
+            // 사용자가 존재하지 않을 경우
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
+    }
 
     @GetMapping("/main")
     public List<News> newsList() {
@@ -64,7 +83,6 @@ public class MainController {
 
     @GetMapping("/bookmark/{userNo}")
     public List<BookmarkDto> bookmarkList(@PathVariable("userNo") Long userId) {
-
         return bookmarkRepository.findAllByUserId(userId);
     }
 
@@ -77,7 +95,6 @@ public class MainController {
 
         Optional<Bookmark> optionalBookmark = bookmarkRepository.findByUserIdAndNewsId(user.getUserNo(), news.getNewsId());
 
-        System.out.println("optionalBookmark = " + optionalBookmark);
         if (optionalBookmark.isPresent()) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("이미 추가된 뉴스입니다.");
         } else {
@@ -103,7 +120,6 @@ public class MainController {
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("사용자 북마크에 해당 뉴스가 존재하지 않음");
         }
-
     }
 
     @GetMapping("/detail/{newsNo}")
@@ -120,7 +136,6 @@ public class MainController {
     @GetMapping("/categories")
     public ResponseEntity<List<Category>> getCategories() {
         List<Category> list = categoryRepository.findAll();
-
         return ResponseEntity.ok(list);
     }
 
@@ -142,19 +157,48 @@ public class MainController {
         user.setPhone(userDto.getPhone());
 
         StringBuilder interest = new StringBuilder();
-
         for (String str : userDto.getInterest()) {
             interest.append(str).append(",");
         }
-
         interest.deleteCharAt(interest.length() - 1);
-
         user.setInterest(interest.toString());
 
         userRepository.save(user);
-
-        // 성공 응답
         return ResponseEntity.status(HttpStatus.CREATED).body("");
+    }
+
+    @GetMapping("/myinfo/{userNo}")
+    public ResponseEntity<UserDto> getUserInfo(@PathVariable("userNo") Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자: " + userId));
+
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setPwd(user.getPwd());
+        userDto.setName(user.getName());
+        userDto.setEmail(user.getEmail());
+        userDto.setBirth(user.getBirth());
+        userDto.setGender(user.getGender());
+        userDto.setPhone(user.getPhone());
+        userDto.setInterest(Arrays.asList(user.getInterest().split(",")));
+
+        return ResponseEntity.ok(userDto);
+    }
+
+    @PutMapping("/myinfo/update/{userNo}")
+    public ResponseEntity<String> updateUserInfo(@PathVariable("userNo") Long userId, @RequestBody UserDto userDto) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자: " + userId));
+
+        user.setEmail(userDto.getEmail());
+        user.setName(userDto.getName());
+        user.setBirth(userDto.getBirth());
+        user.setGender(userDto.getGender());
+        user.setPhone(userDto.getPhone());
+        user.setInterest(String.join(",", userDto.getInterest()));
+
+        userRepository.save(user);
+        return ResponseEntity.ok("User information updated successfully");
     }
 
     //Todo: 뉴스 작성, 여유있으면 프론트 구현 @uzz99
