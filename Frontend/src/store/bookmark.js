@@ -8,5 +8,11 @@ export const useBookmarkStore = defineStore('bookmark', {
         setBookmarkList(bookmarks) {
             this.bookmarkList = bookmarks;
         },
+        addBookmark(newsId){
+            this.bookmarkList = [...this.bookmarkList, { newsId }];
+        },
+        deleteBookmark(newsId){
+            this.bookmarkList = this.bookmarkList.filter(bookmark => bookmark.newsId !== newsId);
+        }
     },
 });

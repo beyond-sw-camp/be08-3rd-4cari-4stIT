@@ -12,7 +12,9 @@
         </div>
         <div class="right">
           <span class="views">조회수 {{ news.views }}</span>
-          <button @click="createBookmark" class="bookmark">북마크에 추가</button>
+            <button @click="statusBookmark" class="bookmark">
+              {{ isBookmarked ? '북마크 삭제' : '북마크에 추가' }}
+          </button>
         </div>
       </div>
 
@@ -30,18 +32,15 @@
       </div>
       <br>
 
-    <div class="navigation-arrows">
-        <div class="go-back">
-          <router-link to="/main" class="go-back-link">
-            <img src="@/assets/go_back.png" class="goback_img" alt="뒤로 가기" width="20px"/>
-          </router-link>
+    <!-- <div class="navigation-arrows">
+        <div v-if="goBack"class="go-back">
+            <img src="@/assets/go_back.png" @click="backTopage" class="goback_img" alt="뒤로 가기" width="20px"/>
         </div>
         <div class="go-forward">
-          <router-link to="/main" class="go-forward-link">
             <img src="@/assets/go.png" class="go_img" alt="앞으로 가기" width="20px"/>
-          </router-link>
         </div>
-      </div>
+      </div> 
+    -->
       
       <div class="back-to-list">
         <router-link :to="backToList" class="back-button">목록으로 돌아가기</router-link>
@@ -49,94 +48,55 @@
 
     </div>
 
-
 </template>
 
 <script>
-
 import axios from 'axios';
-import '@/components/newsdetails/Newsdetails.css'
-import { useRouter, useRoute } from 'vue-router';
-import { useUserStore } from '@/store/user';
-import { computed } from 'vue';
+import useNewsdetails from './Newsdetails.js'
 
 export default {
   name: "DetailNews",
   setup(){
-    const userStore = useUserStore();
-    const router = useRouter();
-    const route = useRoute();
-
-    const createBookmark = async () => {
-      if (!userStore.isLogIn) {
-        alert('로그인이 필요합니다.');
-        router.push('/login');
-        
-        return;
-      }
-
-      try {
-        await axios.post('http://localhost:8080/api/createbookmark', {
-          userId: userStore.user.id,
-          newsId: route.params.newsNo
-        });
-        
-        alert("북마크 추가 완료");
-      } catch (error) {
-        if (error.response && error.response.status === 409) {
-        alert('이미 추가된 뉴스입니다.');
-      } else {
-        console.error('북마크 추가 실패:', error);
-      }
-      }
-    };
-
-    const backToList = computed(() => {
-      return userStore.isLogIn ? '/bookmark' : '/';
-    });
-
-    return {
-      createBookmark,
-      backToList
-    };
+    return useNewsdetails();
   },
-
   data() {
     return {
-      news: {}// api로부터 받은 데이터 저장
+        news: {}
     };
   },
-  
   created() {
     this.fetchNewsDetail();
   },
 
   methods: {
-    async fetchNewsDetail() {
+  async fetchNewsDetail() {
       try {
         const newsNo = this.$route.params.newsNo;
         const response = await axios.get(`http://localhost:8080/api/detail/${newsNo}`);
+        console.log('News data:', response.data);
         this.news = response.data;
-      } catch (error) {
+        
+        } catch (error) {
         console.error("존재하지 않는 뉴스입니다. : ", error);
       }
-    },
-    getNewsById(id) {
-          NewsService.getNewsById(id).then(response => {
-            this.newsList = [response.data];
-          }).catch(error => {
-            console.error("There was an error!", error);
-          });
+  },
+
+  getNewsById(id) {
+      NewsService.getNewsById(id).then(response => {
+      this.newsList = [response.data];
+      }).catch(error => {
+      console.error("There was an error!", error);
+      });
     }
   },
-  
+
   computed: {
-    splitContent() {
+  splitContent() {
       // 문장마다 나누기
       return this.news.content ? this.news.content.split(/(?<=[.])[ ]+/) : [];
       // 문단마다 나누기
       // return this.news.content ? this.news.content.split('\n\n') : [];
+      },
     },
-  },
-};
+  };
 </script>
