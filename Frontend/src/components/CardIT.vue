@@ -42,21 +42,21 @@ export default defineComponent({
     // Function to fetch news based on search query
     const searchNews = async (query) => {
       try {
-        if (userStore.isLogIn) {
-          const response = await NewsService.getNewsById(userStore.user.id);
+        if (query) {
+          const response = await NewsService.searchNews(query);
           newsList.value = response.data;
         } else {
-          if (query) {
-            const response = await NewsService.searchNews(query);
-            newsList.value = response.data;
-          } else {
-            const response = await NewsService.getNewsList();
-            newsList.value = response.data;
-          }
+          const response = await NewsService.getNewsList();
+          newsList.value = response.data;
         }
       } catch (error) {
         console.error('Error fetching news:', error);
       }
+    };
+
+    // Handle search results from HeaderIT component
+    const handleSearchResults = (query) => {
+      searchNews(query);
     };
 
     // Fetch news based on the initial query or default to full list
@@ -76,6 +76,7 @@ export default defineComponent({
 
     return {
       newsList,
+      handleSearchResults, // Added method to handle search results
     };
   },
 });

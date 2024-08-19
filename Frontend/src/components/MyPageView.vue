@@ -95,13 +95,13 @@
 
 <script>
 import axios from 'axios';
-import router from '@/router'; // 라우터를 사용하여 페이지를 이동하기 위해 임포트
+import router from '@/router';
 
 export default {
     name: 'MyPage',
     data() {
         return {
-            editProfileMode: false, // 수정 모드 여부를 결정하는 상태
+            editProfileMode: false,
             form: {
                 id: '',
                 name: '',
@@ -126,7 +126,7 @@ export default {
                 const response = await axios.put(`http://localhost:8080/api/myinfo/update/${userId}`, this.form);
                 localStorage.setItem('user', JSON.stringify(response.data));
                 alert('개인 정보가 성공적으로 수정되었습니다.');
-                this.editProfileMode = false; // 수정 모드 종료
+                this.editProfileMode = false;
             } catch (error) {
                 console.error('개인 정보 수정 중 오류가 발생했습니다:', error);
                 alert('정보 수정에 실패했습니다. 다시 시도해 주세요.');
@@ -180,7 +180,7 @@ export default {
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
             try {
-                this.form = JSON.parse(storedUser); // 저장된 사용자 정보 로드
+                this.form = JSON.parse(storedUser);
             } catch (error) {
                 console.error('사용자 정보 파싱 중 오류가 발생했습니다:', error);
                 alert('사용자 정보를 로드하는 데 실패했습니다. 다시 로그인해 주세요.');
@@ -189,7 +189,7 @@ export default {
         } else {
             console.error('사용자 정보가 로드되지 않았습니다.');
             alert('로그인이 필요합니다.');
-            router.push('/login'); // 로그인 페이지로 리다이렉트
+            router.push('/login');
         }
     },
 };
@@ -276,9 +276,14 @@ li {
     flex: 1 1 30%;
     margin: 5px;
     background-color: #93bfcf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
 }
 
 .interest-buttons button.selected {
-    background-color: #bdcdd6;
+    background-color: #6096B4;
 }
 </style>

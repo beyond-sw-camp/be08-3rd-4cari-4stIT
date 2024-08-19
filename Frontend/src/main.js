@@ -2,10 +2,8 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import axios from 'axios';
-import store from './store/index';
-
-// 테스트용 임포트
-import { useUserStore } from '@/store/user';
+import { createPinia } from 'pinia'; // Pinia를 사용하기 위해 import
+import { useUserStore } from '@/store/user'; // User Store import
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -15,15 +13,14 @@ import './assets/main.css';
 import './assets/HFcss.css';
 
 const app = createApp(App);
+const pinia = createPinia(); // Pinia 인스턴스 생성
 
 app.use(router);
-app.use(store);
+app.use(pinia); // Pinia를 Vue 애플리케이션에 등록
 app.config.globalProperties.$axios = axios;
 app.component('HeaderIT', HeaderIT);
 app.mount('#app');
 
-// store.commit('restoreUser');
-
-// 테스트용
+// 사용자 정보를 로컬 스토리지에서 복원
 const userStore = useUserStore();
-userStore.setUser({ id: 1 });
+userStore.loadUser(); // 사용자 정보를 로컬 스토리지에서 로드
