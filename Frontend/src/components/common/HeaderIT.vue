@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-navbar fixed-top">
         <div class="container px-lg-5">
-            <RouterLink class="navbar-brand" :to="{ name: 'main' }" style="font-size: 20px;">4ST-IT</RouterLink>
+            <RouterLink class="navbar-brand" :to="{ name: 'main' }" style="font-size: 20px; color: white;">4ST-IT</RouterLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -16,7 +16,7 @@
                 </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li v-if="!isLoggedIn" class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'JoinView' }" style="font-size: 15px;">회원가입</RouterLink>
+                        <RouterLink class="nav-link" :to="{ name: 'JoinView' }" style="font-size: 15px; color: white;">회원가입</RouterLink>
                     </li>
 
                     <!--
@@ -34,13 +34,13 @@
 
                     <li class="nav-item">
 
-                        <RouterLink class="nav-link" :to="{ name: 'login' }" style="font-size: 15px;">로그인</RouterLink>
+                        <RouterLink class="nav-link" :to="{ name: 'login' }" style="font-size: 15px; color: white;">로그인</RouterLink>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px;">마이페이지</RouterLink>
+                        <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px; color: white;">마이페이지</RouterLink>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
-                        <a class="nav-link" href="#!" style="font-size: 15px;" @click="logout">로그아웃</a>
+                        <a class="nav-link" href="#!" style="font-size: 15px; color: white;" @click="logout">로그아웃</a>
                     </li>
                 </ul>
             </div>
