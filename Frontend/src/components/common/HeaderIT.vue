@@ -44,6 +44,7 @@
                     </li>
                 </ul>
             </div>
+            <RouterLink class="nav-link" :to="{ name: 'bookmark' }" style="font-size: 15px;">북마크로 이동</RouterLink>
         </div>
     </nav>
 </template>
