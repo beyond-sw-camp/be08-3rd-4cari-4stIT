@@ -15,6 +15,10 @@ class NewsService {
       params: { query },
     });
   }
+  // 상위 3개 뉴스 가져오기
+  getTop3News() {
+    return axios.get(`${NEWS_API_BASE_URL}/top`);
+  }
 }
 
 export default new NewsService();

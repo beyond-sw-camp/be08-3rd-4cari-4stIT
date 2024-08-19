@@ -201,6 +201,11 @@ public class MainController {
         return ResponseEntity.ok("User information updated successfully");
     }
 
+    @GetMapping("/main/top")
+    public List<News> getTop3News() {
+        return newsRepository.findTop3ByOrderByViewsDesc();
+    }
+
     //Todo: 뉴스 작성, 여유있으면 프론트 구현 @uzz99
 //    @PostMapping("/createnews")
 //    public void createNews(@RequestBody NewsDto newsDTO) {
