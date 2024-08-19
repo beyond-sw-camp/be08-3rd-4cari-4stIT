@@ -5,10 +5,12 @@ import { useRouter, useRoute } from 'vue-router';
 import { computed, onMounted } from 'vue';
 import { useUserStore } from '@/store/user';
 import { useBookmarkStore } from '@/store/bookmark';
+import { useNavigatorStore } from '@/store/navigator';
 
 export default function useNewsdetails() {
     const userStore = useUserStore();
     const bookmarkStore = useBookmarkStore();
+    const naviStore = useNavigatorStore();
 
     const router = useRouter();
     const route = useRoute();
@@ -17,6 +19,11 @@ export default function useNewsdetails() {
 
     const bookmarkList = computed(() => bookmarkStore.bookmarkList);
     const isBookmarked = computed(() => bookmarkList.value.some(news => news.newsId === curNewsNo));
+    
+    router.beforeEach((to, from) => {
+        // console.log("to", to.name, "from, ", from.name);
+            naviStore.setPrev(from.name);
+    });
 
     const fetchBookmarkList = async () => {
         if (userStore.isLogIn) {
@@ -36,7 +43,7 @@ export default function useNewsdetails() {
         
         return;
         };
-        // console.log("isBookmarked: ", isBookmarked.value);
+
         try {
         if(isBookmarked.value){
         
@@ -74,7 +81,13 @@ export default function useNewsdetails() {
     });
 
     const backToList = computed(() => {
-        return userStore.isLogIn ? '/bookmark' : '/';
+        // console.log("naviStore.prev, ", naviStore.prev);
+        if(naviStore.prev === 'bookmark'){// 이전 페이지가 북마크면
+            return '/bookmark';
+        }
+        else{
+            return '/';
+        }
     });
 
     return {
