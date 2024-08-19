@@ -4,7 +4,9 @@ import Bookmark from '@/components/Bookmark.vue';
 import MainIT from '@/components/MainIT.vue';
 import Newsdetails from '@/components/newsdetails/Newsdetails.vue';
 import JoinView from '@/components/JoinView.vue';
+import MyPageView from '@/components/MyPageView.vue';
 import Login from '@/components/Login.vue';
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +32,10 @@ const router = createRouter({
       component: JoinView,
     },
     {
+      path: '/mypage', 
+      name: 'MyPageView',
+      component: MyPageView,
+    },
       path: '/login',
       name: 'login',
       component: Login,
