@@ -19,7 +19,7 @@
                         <RouterLink class="nav-link" :to="{ name: 'JoinView' }" style="font-size: 15px;">회원가입</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!" style="font-size: 15px;">로그인</a>
+                        <RouterLink class="nav-link" :to="{ name: 'login' }" style="font-size: 15px;">로그인</RouterLink>
                     </li>
                 </ul>
             </div>
