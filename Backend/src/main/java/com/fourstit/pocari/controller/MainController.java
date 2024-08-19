@@ -178,7 +178,6 @@ public class MainController {
 
         UserDto userDto = new UserDto();
         userDto.setId(user.getId());
-        userDto.setPwd(user.getPwd());
         userDto.setName(user.getName());
         userDto.setEmail(user.getEmail());
         userDto.setBirth(user.getBirth());
@@ -189,7 +188,7 @@ public class MainController {
         return ResponseEntity.ok(userDto);
     }
 
-    @PutMapping("/myinfo/update/{userNo}")
+    @PutMapping("/myinfo/updateUserInfo/{userNo}")
     public ResponseEntity<String> updateUserInfo(@PathVariable("userNo") Long userId, @RequestBody UserDto userDto) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자: " + userId));
@@ -199,10 +198,42 @@ public class MainController {
         user.setBirth(userDto.getBirth());
         user.setGender(userDto.getGender());
         user.setPhone(userDto.getPhone());
-        user.setInterest(String.join(",", userDto.getInterest()));
 
         userRepository.save(user);
         return ResponseEntity.ok("User information updated successfully");
+    }
+
+    @PutMapping("/myinfo/updateInterest/{userNo}")
+    public ResponseEntity<String> updateUserInterest(@PathVariable("userNo") Long userNo, @RequestBody List<String> interests) {
+        User user = userRepository.findById(userNo)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자: " + userNo));
+
+        user.setInterest(String.join(",", interests));
+        userRepository.save(user);
+
+        return ResponseEntity.ok("관심사가 성공적으로 수정되었습니다.");
+    }
+
+    @PutMapping("/myinfo/updatePwd/{userNo}")
+    public ResponseEntity<String> updatePassword(
+            @PathVariable("userNo") Long userNo,
+            @RequestParam String currentPassword,
+            @RequestParam String newPassword) {
+
+        // 사용자 조회
+        User user = userRepository.findById(userNo)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자: " + userNo));
+
+        // 현재 비밀번호 확인
+        if (!user.getPwd().equals(currentPassword)) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("현재 비밀번호가 일치하지 않습니다.");
+        }
+
+        // 비밀번호 업데이트
+        user.setPwd(newPassword);
+        userRepository.save(user);
+
+        return ResponseEntity.ok("비밀번호가 성공적으로 변경되었습니다.");
     }
 
     @GetMapping("/main/top")
