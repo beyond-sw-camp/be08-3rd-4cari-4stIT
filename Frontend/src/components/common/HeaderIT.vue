@@ -19,14 +19,14 @@
                         <RouterLink class="nav-link" :to="{ name: 'JoinView' }" style="font-size: 15px;">회원가입</RouterLink>
                     </li>
 
-                    //<li v-if="!isLoggedIn" class="nav-item">
-                      //  <a class="nav-link" href="#!" style="font-size: 15px;" @click="showLoginModal">로그인</a>
-                    //</li>
-                    //<li v-if="isLoggedIn" class="nav-item">
-                      //  <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px;">마이페이지</RouterLink>
-                    //</li>
-                    //<li v-if="isLoggedIn" class="nav-item">
-                      //  <a class="nav-link" href="#!" style="font-size: 15px;" @click="logout">로그아웃</a>
+                    <!-- <li v-if="!isLoggedIn" class="nav-item">
+                    <a class="nav-link" href="#!" style="font-size: 15px;" @click="showLoginModal">로그인</a>
+                    </li>
+                    <li v-if="isLoggedIn" class="nav-item">
+                    <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px;">마이페이지</RouterLink>
+                    </li>
+                    <li v-if="isLoggedIn" class="nav-item">
+                    <a class="nav-link" href="#!" style="font-size: 15px;" @click="logout">로그아웃</a> -->
 
                     <li class="nav-item">
                         <RouterLink class="nav-link" :to="{ name: 'login' }" style="font-size: 15px;">로그인</RouterLink>
