@@ -42,12 +42,12 @@ export default defineComponent({
     // Function to fetch news based on search query
     const searchNews = async (query) => {
       try {
-        if (userStore.isLogIn) {
-          const response = await NewsService.getNewsById(userStore.user.id);
+        if (query) {
+          const response = await NewsService.searchNews(query);
           newsList.value = response.data;
         } else {
-          if (query) {
-            const response = await NewsService.searchNews(query);
+          if (userStore.isLogIn) {
+            const response = await NewsService.getNewsById(userStore.user.id);
             newsList.value = response.data;
           } else {
             const response = await NewsService.getNewsList();
