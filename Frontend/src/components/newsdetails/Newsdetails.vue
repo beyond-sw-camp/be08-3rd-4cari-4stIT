@@ -1,9 +1,12 @@
 <template>
+<link rel="stylesheet" 
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <div class="main-container">
     <div class="article-title-section">
       <h1>{{ news.title }}</h1>
     </div>
-
+    <br>
+    <br>
     <div class="meta-container">
       <div class="left">
         <span class="date">작성 {{ news.createdDate }}</span>
@@ -12,6 +15,9 @@
       <div class="right">
         <span class="views">조회수 {{ news.views }}</span>
         <button @click="statusBookmark" class="bookmark">
+          <span class="material-symbols-outlined">
+              {{ isBookmarked ? 'bookmark_remove' : 'bookmark_add' }}
+          </span>
           {{ isBookmarked ? '북마크 삭제' : '북마크에 추가' }}
         </button>
       </div>
