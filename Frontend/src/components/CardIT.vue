@@ -89,6 +89,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
 .custom-section {
   margin-left: 20px;
   padding-right: 20px;
@@ -104,6 +105,12 @@ export default defineComponent({
   background-color: #ffffff;
   border: 2px solid #e0e9ee;
   box-shadow: 0px 6px 20px rgba(96, 150, 180, 0.4);
+}
+
+.custom-card1:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 8px 25px rgba(96, 150, 180, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-news1 img {
@@ -122,7 +129,10 @@ export default defineComponent({
 }
 
 .card1-text h2 {
-  margin-top: 0;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
 }
 
 .card1-text p {
