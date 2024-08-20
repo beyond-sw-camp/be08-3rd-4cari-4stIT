@@ -6,7 +6,7 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">회사소개</a></li>
+                    <li><a href="https://github.com/beyond-sw-camp/be08-3rd-4cari-4stIT">회사소개</a></li>
                     <li><a href="#">연락처</a></li>
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">이용약관</a></li>
