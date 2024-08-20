@@ -81,6 +81,7 @@ export default {
 </script>
 
 <style scoped>
+
 .main-section {
     display: flex;
     justify-content: center;
@@ -88,7 +89,12 @@ export default {
 }
 
 .container {
-    width: 1286px;
+    width: 1230px;    
+    margin-bottom: 40px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 2px solid #e0e9ee;
+    box-shadow: 0px 6px 20px rgba(96, 150, 180, 0.4);
 }
 
 .swiper {
@@ -121,12 +127,12 @@ export default {
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 50px;
+
 }
 
 .main-news-image {
     display: block;
-    width: auto;
-    width: 800px;
+    width: 100%;
     height: 300px;
 }
 
@@ -139,6 +145,19 @@ export default {
     -webkit-line-clamp: 3;
     overflow: hidden; 
     text-overflow: ellipsis;
+}
+
+.news-item-link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 기본 텍스트 색상 사용 */
+}
+
+.news-item-link:hover {
+    color: inherit; /* 호버 시에도 기본 텍스트 색상 유지 */
+}
+
+.news-item-link h2, .news-item-link p {
+    margin: 0;
 }
 </style>
 
