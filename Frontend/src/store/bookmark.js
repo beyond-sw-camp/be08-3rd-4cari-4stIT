@@ -13,6 +13,9 @@ export const useBookmarkStore = defineStore('bookmark', {
         },
         deleteBookmark(newsId){
             this.bookmarkList = this.bookmarkList.filter(bookmark => bookmark.newsId !== newsId);
+        },
+        clearBookmarkList() {
+            this.bookmarkList = []; // 북마크 리스트 초기화
         }
     },
 });

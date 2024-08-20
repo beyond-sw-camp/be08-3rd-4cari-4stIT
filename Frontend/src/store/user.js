@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { useBookmarkStore } from './bookmark';
 
 export const useUserStore = defineStore('user', {
   state: () => ({
@@ -17,8 +18,12 @@ export const useUserStore = defineStore('user', {
       this.user = null;
       this.isLoggedIn = false;
 
+
       localStorage.removeItem('user');
       localStorage.removeItem('isLoggedIn');
+      
+      const bookmarkStore = useBookmarkStore();
+      bookmarkStore.clearBookmarkList();
     },
     loadUserFromStorage() {
       const storedUser = localStorage.getItem('user');
