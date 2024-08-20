@@ -11,7 +11,7 @@
                   <img :src="news.image" alt="Image 4" class="card-image" />
                   <div class="card1-text">
                     <h2>{{ news.title }}</h2>
-                    <br>
+                    <br />
                     <p>{{ news.content }}</p>
                   </div>
                 </div>
@@ -43,15 +43,10 @@ export default defineComponent({
     // Function to fetch news based on search query
     const searchNews = async (query) => {
       try {
-      
         if (query) {
           const response = await NewsService.searchNews(query);
           newsList.value = response.data;
         } else {
-
-          const response = await NewsService.getNewsList();
-          newsList.value = response.data;  
-
           if (userStore.isLoggedIn) {
             const response = await NewsService.getNewsById(userStore.user.userNo);
             newsList.value = response.data;
@@ -60,7 +55,6 @@ export default defineComponent({
             newsList.value = response.data;
           }
         }
-        
       } catch (error) {
         console.error('Error fetching news:', error);
       }
