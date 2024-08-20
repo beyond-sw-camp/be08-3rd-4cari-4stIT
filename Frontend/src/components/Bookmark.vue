@@ -1,5 +1,5 @@
   <template>
-    <div>
+    <div id="content">
       <div class="container">
         <h3>북마크한 뉴스</h3>
         <div v-if="bookmarkList.length === 0" class="no-bookmark">
@@ -81,6 +81,10 @@
     width: 100%;
   }
 
+  #content {
+    flex: 1;
+  }
+  
   .container {
     background-color: #bdcdd6;
     padding: 20px;

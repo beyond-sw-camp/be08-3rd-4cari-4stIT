@@ -1,11 +1,13 @@
 <template>
-  <div class="login-wrapper">
-    <h2>Login</h2>
-    <form @submit.prevent="handleSubmit" id="login-form">
-      <input type="text" v-model="email" placeholder="Email" required />
-      <input type="password" v-model="password" placeholder="Password" required />
-      <input type="submit" value="Login" />
-    </form>
+  <div id="content">
+    <div class="login-wrapper">
+      <h2>Login</h2>
+      <form @submit.prevent="handleSubmit" id="login-form">
+        <input type="text" v-model="email" placeholder="Email" required />
+        <input type="password" v-model="password" placeholder="Password" required />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
   </div>
 </template>
 
@@ -52,6 +54,10 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
+#content {
+  flex: 1;
+}
+
 .login-wrapper {
   width: 400px;
   margin: 130px auto 80px;
@@ -61,14 +67,14 @@ const handleSubmit = async () => {
   box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.login-wrapper > h2 {
+.login-wrapper>h2 {
   font-size: 24px;
   color: #6096b4;
   margin-bottom: 50px;
   text-align: center;
 }
 
-#login-form > input {
+#login-form>input {
   width: 100%;
   height: 48px;
   padding: 0 10px;
@@ -79,11 +85,11 @@ const handleSubmit = async () => {
   font-size: 14px;
 }
 
-#login-form > input::placeholder {
+#login-form>input::placeholder {
   color: #d2d2d2;
 }
 
-#login-form > input[type='submit'] {
+#login-form>input[type='submit'] {
   color: #fff;
   font-size: 16px;
   background-color: #6096b4;
@@ -92,29 +98,29 @@ const handleSubmit = async () => {
   transition: background-color 0.3s ease;
 }
 
-#login-form > input[type='submit']:hover {
+#login-form>input[type='submit']:hover {
   background-color: #5076a5;
 }
 
-#login-form > input[type='checkbox'] {
+#login-form>input[type='checkbox'] {
   display: none;
 }
 
-#login-form > label {
+#login-form>label {
   color: #999999;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-#login-form input[type='checkbox'] + label {
+#login-form input[type='checkbox']+label {
   padding-left: 26px;
   background-image: url('checkbox.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-#login-form input[type='checkbox']:checked + label {
+#login-form input[type='checkbox']:checked+label {
   background-image: url('checkbox-active.png');
 }
 </style>
