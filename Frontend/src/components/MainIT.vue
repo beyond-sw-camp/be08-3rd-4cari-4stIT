@@ -1,35 +1,27 @@
 <template>
     <section class="main-section">
-    <div class="container px-lg-5" style="margin-top: 80px;">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-            <swiper
-                :autoplay="{
-                    delay: 3000,
-                    disableOnInteraction: false
-                }"
-                :navigation="true"
-                :loop="true"
-                :pagination="{
-                    clickable: true
-                }"
-                :modules="modules"
-                class="swiper"
-            >
-                <swiper-slide v-for="(news, index) in newsTop3" :key="index">
-                    <router-link :to="`/detail/${news.newsId}`" class="news-item-link">
-                    <div class="slide-content">
-                        <img :src="news.image" class="main-news-image" />
-                        <div class="slide-text">
-                            <h2>{{ news.title }}</h2>
-                            <p id="swp">{{ news.content }}</p>
-                        </div>
-                    </div>
-                    </router-link>
-                </swiper-slide>
-            </swiper>
+        <div class="container px-lg-5" style="margin-top: 80px;">
+            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                <swiper :space-between="30" :centeredSlides="true" :autoplay="autoplayOptions" :navigation="true"
+                    :pagination="{
+                        clickable: true
+                    }" :modules="modules" class="swiper">
+                    <swiper-slide v-for="(news, index) in newsTop3" :key="index">
+                        <router-link :to="`/detail/${news.newsId}`" class="news-item-link">
+                            <div class="slide-content">
+                                <img :src="news.image" class="main-news-image" />
+                                <div class="slide-text">
+                                    <h2>{{ news.title }}</h2>
+                                    <br>
+                                    <p>{{ news.content }}</p>
+                                </div>
+                            </div>
+                        </router-link>
+                    </swiper-slide>
+                </swiper>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
     <CardIT />
 </template>
 
@@ -67,9 +59,13 @@ export default {
             }
         };
 
+        
+
         onMounted(() => {
             getTop3News();
+            
         });
+        
 
         return {
             modules,
@@ -145,6 +141,13 @@ export default {
     -webkit-line-clamp: 3;
     overflow: hidden; 
     text-overflow: ellipsis;
+}
+
+.slide-text h2 {
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
 }
 
 .news-item-link {
