@@ -47,16 +47,13 @@ public class MainController {
             for (User user : users) {
                 if (user.getId().equals(userDto.getId()) && user.getPwd().equals(userDto.getPwd())) {
                     // 로그인 성공 시
-                    //return ResponseEntity.ok("Login successful");
                     return ResponseEntity.ok(user);
                 }
             }
             // 비밀번호가 일치하지 않을 경우
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid password");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         } else {
             // 사용자가 존재하지 않을 경우
-            //return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
@@ -76,7 +73,6 @@ public class MainController {
 
     @GetMapping("/main/{userNo}")
     public List<News> searchNews(@PathVariable("userNo") Long userNo) {
-        log.info("Searching news for {}", userNo);
         User user = userRepository.findById(userNo).orElseThrow();
         List<Integer> categoryIds = Arrays.stream(user.getInterest().split(","))
                 .map(Integer::parseInt)
