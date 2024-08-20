@@ -98,6 +98,12 @@ export default defineComponent({
   width: 100%;
   height: 350px; /* 고정된 높이 설정 */
   margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 2px solid #e0e9ee;
+  box-shadow: 0px 6px 20px rgba(96, 150, 180, 0.4);
 }
 
 .card-news1 img {
@@ -135,4 +141,18 @@ export default defineComponent({
 .nav-tabs .nav-link.active {
   border-bottom: 2px solid #007bff;
 }
+
+.news-item-link {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 기본 텍스트 색상 사용 */
+}
+
+.nav-tabs .nav-link {
+  border: none;
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid #007bff;
+}
+
 </style>
