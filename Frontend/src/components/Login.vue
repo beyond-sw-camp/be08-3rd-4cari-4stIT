@@ -39,6 +39,8 @@ const handleSubmit = async () => {
 
     const userData = response.data;
     userStore.login(userData);
+    // userNo를 로컬 스토리지에 저장
+    localStorage.setItem('userNo', userData.userNo);
 
     // 메인 페이지로 이동
     router.push('/');
