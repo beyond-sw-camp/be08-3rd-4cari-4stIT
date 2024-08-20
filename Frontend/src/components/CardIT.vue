@@ -11,6 +11,7 @@
                   <img :src="news.image" alt="Image 4" class="card-image" />
                   <div class="card1-text">
                     <h2>{{ news.title }}</h2>
+                    <br>
                     <p>{{ news.content }}</p>
                   </div>
                 </div>
@@ -46,16 +47,16 @@ export default defineComponent({
           const response = await NewsService.searchNews(query);
           newsList.value = response.data;
         } else {
-        const response = await NewsService.getNewsList();
-        newsList.value = response.data;
+          const response = await NewsService.getNewsList();
+          newsList.value = response.data;
 
-//        if (userStore.isLogIn) {
-//          const response = await NewsService.getNewsById(userStore.user.id);
-//          newsList.value = response.data;
-//        } else {
-//          const response = await NewsService.getNewsList();
-//          newsList.value = response.data;
-//        }
+          // if (userStore.isLogIn) {
+          //   const response = await NewsService.getNewsById(userStore.user.id);
+          //   newsList.value = response.data;
+          // } else {
+          //   const response = await NewsService.getNewsList();
+          //   newsList.value = response.data;
+          // }
         }
       } catch (error) {
         console.error('Error fetching news:', error);
@@ -96,38 +97,38 @@ export default defineComponent({
   padding-right: 20px;
 }
 
-.custom-card1,
-.custom-card2 {
+.custom-card1 {
   width: 100%;
-  height: 300px;
+  height: 350px; /* 고정된 높이 설정 */
   margin-bottom: 20px;
 }
 
-.card-news1 img,
-.card-news2 img {
+.card-news1 img {
   width: 100%;
-  height: 250px;
+  height: 200px; /* 이미지의 높이 고정 */
   object-fit: cover;
 }
 
-.card1-text,
-.card2-text {
+.card1-text {
   padding: 20px;
   text-align: center;
-  height: 100%;
+  height: 150px; /* 고정된 높이 설정 */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.card1-text h2,
-.card2-text h2 {
+.card1-text h2 {
   margin-top: 0;
 }
 
-.card1-text p,
-.card2-text p {
+.card1-text p {
   margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 표시할 줄 수 설정 */
+  -webkit-box-orient: vertical;
 }
 
 .nav-tabs .nav-link {
