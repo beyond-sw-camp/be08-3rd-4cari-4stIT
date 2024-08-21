@@ -18,7 +18,7 @@
 .search-box {
     display: flex;
     align-items: center;
-    width: 70%; 
+    width: 90%; 
 }
 
 .search-txt {
@@ -44,10 +44,6 @@
 #search {
     flex: 1;
     margin-left: 100px;
-}
-
-#pageMove {
-    align-items: right;
 }
 
 /* Footer */

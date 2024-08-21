@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <nav class="navbar navbar-expand-lg bg-navbar fixed-top">
         <div class="container px-lg-5">
-            <RouterLink class="navbar-brand" :to="{ name: 'main' }" style="font-size: 20px; color: white">4ST-IT</RouterLink>
+            <RouterLink class="navbar-brand custom-navbar-brand" :to="{ name: 'main' }">4ST-IT</RouterLink>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -24,22 +24,22 @@
                     </form>
                 </div>
             </div>
-            <div>
+            <div class="custom-ul">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li v-if="!isLoggedIn" class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'JoinView' }" style="font-size: 15px; color: white">회원가입</RouterLink>
+                        <RouterLink class="nav-link custom-nav-link" :to="{ name: 'JoinView' }">회원가입</RouterLink>
                     </li>
                     <li v-if="!isLoggedIn" class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'login' }" style="font-size: 15px; color: white">로그인</RouterLink>
+                        <RouterLink class="nav-link custom-nav-link" :to="{ name: 'login' }">로그인</RouterLink>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'bookmark' }" style="font-size: 15px; color: white">북마크</RouterLink>
+                        <RouterLink class="nav-link custom-nav-link" :to="{ name: 'bookmark' }">북마크</RouterLink>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px; color: white">마이페이지</RouterLink>
+                        <RouterLink class="nav-link custom-nav-link" :to="{ name: 'MyPageView' }">마이페이지</RouterLink>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
-                        <a class="nav-link" href="#!" style="font-size: 15px; color: white" @click="logout">로그아웃</a>
+                        <a class="nav-link custom-nav-link" href="#!" @click="logout">로그아웃</a>
                     </li>
                 </ul>
             </div>
@@ -113,5 +113,20 @@
         background: none;
         border: none;
         cursor: pointer;
+    }
+
+    .custom-navbar-brand{
+        font-size: 20px; 
+        color: white; 
+        margin-left: -180px !important; 
+    }
+
+    .custom-nav-link {
+        font-size: 15px;
+        color: white
+    }
+
+    .custom-ul {
+        margin-right: -250px;
     }
     </style>
