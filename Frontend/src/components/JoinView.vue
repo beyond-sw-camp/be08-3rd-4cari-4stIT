@@ -3,74 +3,160 @@
     <h2>회원가입</h2>
     <form @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="id">아이디</label>
-        <input type="text" v-model="form.id" id="id" placeholder="아이디를 입력해주세요." required :disabled="usernameChecked" />
-        <button id="btn-idChk" type="button" @click="checkUsername">중복 확인</button>
-        <span v-if="usernameCheckMessage" :class="{ 'text-success': !isUsernameDuplicate, 'text-danger': isUsernameDuplicate }">
+        <label for="id">
+          <i class="fas fa-user"></i> 아이디
+        </label>
+        <div class="input-group">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              v-model="form.id"
+              id="id"
+              placeholder="아이디를 입력해주세요."
+              required
+              :disabled="usernameChecked"
+              class="input-id"
+            />
+          </div>
+          <div class="button-wrapper">
+            <button
+              id="btn-idChk"
+              type="button"
+              @click="checkUsername"
+              class="btn-idChk"
+            >
+              <i class="fas fa-check"></i> 중복 확인
+            </button>
+          </div>
+        </div>
+        <span
+          v-if="usernameCheckMessage"
+          :class="{ 'text-success': !isUsernameDuplicate, 'text-danger': isUsernameDuplicate }"
+        >
           {{ usernameCheckMessage }}
         </span>
       </div>
 
       <div class="form-group">
-        <label for="pwd">비밀번호</label>
-        <input type="password" v-model="form.pwd" id="pwd" placeholder="비밀번호를 입력해주세요." required />
+        <label for="pwd">
+          <i class="fas fa-lock"></i> 비밀번호
+        </label>
+        <input
+          type="password"
+          v-model="form.pwd"
+          id="pwd"
+          placeholder="비밀번호를 입력해주세요."
+          required
+        />
       </div>
 
       <div class="form-group">
-        <label for="email">이메일 주소</label>
-        <input type="email" v-model="form.email" id="email" placeholder="4stIT@4cari.com" required />
+        <label for="email">
+          <i class="fas fa-envelope"></i> 이메일 주소
+        </label>
+        <input
+          type="email"
+          v-model="form.email"
+          id="email"
+          placeholder="4stIT@4cari.com"
+          required
+        />
       </div>
 
       <div class="form-group">
-        <label for="name">이름</label>
-        <input type="text" v-model="form.name" id="name" placeholder="이름을 입력해주세요." required />
+        <label for="name">
+          <i class="fas fa-user-tag"></i> 이름
+        </label>
+        <input
+          type="text"
+          v-model="form.name"
+          id="name"
+          placeholder="이름을 입력해주세요."
+          required
+        />
       </div>
 
       <div class="form-group">
-        <label for="birth">생년월일</label>
-        <input type="date" v-model="form.birth" id="birth" required />
+        <label for="birth">
+          <i class="fas fa-calendar-alt"></i> 생년월일
+        </label>
+        <input
+          type="date"
+          v-model="form.birth"
+          id="birth"
+          required
+        />
       </div>
 
       <div class="form-group">
-        <label>성별</label>
+        <label>
+          <i class="fas fa-venus"></i><i class="fas fa-mars"></i> 성별
+        </label>
         <div>
           <label>
-            <input type="radio" v-model="form.gender" value="M" required />
+            <input
+              type="radio"
+              v-model="form.gender"
+              value="M"
+              required
+            />
             남성
           </label>
           <label>
-            <input type="radio" v-model="form.gender" value="F" required />
+            <input
+              type="radio"
+              v-model="form.gender"
+              value="F"
+              required
+            />
             여성
           </label>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="phone">휴대전화번호</label>
-        <input type="tel" v-model="form.phone" id="phone" placeholder="01012345678" required maxlength="11" />
+        <label for="phone">
+          <i class="fas fa-phone"></i> 휴대전화번호
+        </label>
+        <input
+          type="tel"
+          v-model="form.phone"
+          id="phone"
+          placeholder="01012345678"
+          required
+          maxlength="11"
+        />
       </div>
 
-      <!-- <div class="form-group">
-        <label for="interest">관심사</label>
-        <select name="interest" v-model="form.interest" id="interest" multiple size="3">
-          <option value="web">웹개발</option>
-          <option value="game">게임개발</option>
-          <option value="data">데이터사이언스</option>
-          <option value="ai">인공지능</option>
-          <option value="security">보안</option>
-          <option value="network">네트워크</option>
-        </select>
-      </div> -->
       <div class="form-group">
-        <label for="interest">관심사</label>
-        <select name="interest" v-model="form.interest" id="interest" multiple size="5" required>
-          <option v-for="category in categories" :key="category.categoryId" :value="category.categoryId">
+        <label for="interest">
+          <i class="fas fa-tags"></i> 관심사
+        </label>
+        <select
+          name="interest"
+          v-model="form.interest"
+          id="interest"
+          multiple
+          size="5"
+          required
+        >
+          <option
+            v-for="category in categories"
+            :key="category.categoryId"
+            :value="category.categoryId"
+          >
             {{ category.name }}
           </option>
         </select>
       </div>
 
-      <button type="submit" :disabled="!usernameChecked">회원가입</button>
+      <button
+        type="submit"
+        :disabled="!usernameChecked"
+        class="join-button"
+      >
+        <i class="fas fa-user-plus"></i> 회원가입
+      </button>
     </form>
   </div>
 </template>
@@ -131,7 +217,6 @@ export default {
         console.error('아이디 중복 확인 중 오류가 발생했습니다:', error);
         this.usernameCheckMessage = '오류가 발생했습니다. 다시 시도해 주세요.';
       }
-      console.log(this.form.id + this.usernameCheckMessage + '작동' + this.usernameChecked);
     },
     async submitForm() {
       if (!this.usernameChecked) {
@@ -158,7 +243,7 @@ export default {
 <style scoped>
 .signup-container {
   max-width: 800px;
-  min-width: 400px;
+  min-width: 450px;
   margin: 100px auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -174,8 +259,28 @@ h2 {
 }
 
 label {
-  display: block;
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
+}
+
+label i {
+  margin-right: 8px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-wrapper {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.button-wrapper {
+  flex-shrink: 0;
 }
 
 input[type='text'],
@@ -188,8 +293,10 @@ input[type='tel'] {
   box-sizing: border-box;
 }
 
-button[type='submit'] {
-  width: 100%;
+button[type='submit'],
+button[type='button'] {
+  display: flex;
+  align-items: center;
   padding: 10px;
   background-color: #93bfcf;
   color: white;
@@ -198,21 +305,14 @@ button[type='submit'] {
   cursor: pointer;
 }
 
-#id {
-  width: 80%;
-  padding: 8px;
-  box-sizing: border-box;
-  margin-right: 10px;
+button[type='button'] i,
+button[type='submit'] i {
+  margin-right: 5px;
 }
 
-#btn-idChk {
-  width: 15%;
-  height: 30px;
-  background-color: #93bfcf;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+button.join-button {
+  width: 100%;
+  padding: 15px;
 }
 
 button[type='submit']:hover,
