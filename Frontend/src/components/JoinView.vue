@@ -303,6 +303,8 @@ button[type='button'] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  justify-content: center; /* 수평 중앙 정렬 */
+  line-height: 1; /* 텍스트와 아이콘의 정렬을 더 정확하게 맞추기 위한 설정 */
 }
 
 button[type='button'] i,

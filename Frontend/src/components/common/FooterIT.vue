@@ -2,7 +2,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="../../image/logo.jpg" alt="4st IT Logo">
+                <img src="../../image/logo.png" alt="4st IT Logo">
             </div>
             <div class="footer-links">
                 <ul>
