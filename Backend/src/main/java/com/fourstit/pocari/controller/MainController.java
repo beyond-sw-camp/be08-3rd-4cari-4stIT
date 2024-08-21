@@ -11,8 +11,6 @@ import com.fourstit.pocari.repository.NewsRepository;
 import com.fourstit.pocari.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +21,6 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -31,7 +28,6 @@ import java.util.stream.Collectors;
 @CrossOrigin("http://localhost:5173/")
 @Slf4j
 public class MainController {
-
     private final UserRepository userRepository;
     private final NewsRepository newsRepository;
     private final BookmarkRepository bookmarkRepository;
