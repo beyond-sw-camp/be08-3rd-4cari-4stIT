@@ -5,6 +5,7 @@ import { computed, onMounted } from 'vue';
 import { useUserStore } from '@/store/user';
 import { useBookmarkStore } from '@/store/bookmark';
 import { useNavigatorStore } from '@/store/navigator';
+import Swal from 'sweetalert2';
 
 export default function useNewsdetails() {
   const userStore = useUserStore();
@@ -37,10 +38,26 @@ export default function useNewsdetails() {
 
   const statusBookmark = async () => {
     if (!userStore.isLoggedIn) {
-      alert('로그인이 필요합니다.');
-      router.push('/login');
-
-      return;
+        Swal.fire({
+          title: '로그인이 필요합니다. 로그인 하시겠습니까?',
+          text: '',
+          icon: 'warning',
+          
+          showCancelButton: true, // cancel버튼 보이기. 기본은 원래 없음
+          confirmButtonColor: '#3085d6', // confrim 버튼 색깔 지정
+          cancelButtonColor: '#d33', // cancel 버튼 색깔 지정
+          confirmButtonText: '확인', // confirm 버튼 텍스트 지정
+          cancelButtonText: '취소', // cancel 버튼 텍스트 지정
+          iconColor: 'red'
+          
+          // reverseButtons: true, // 버튼 순서 거꾸로
+          
+          }).then(result => {
+          // 만약 Promise리턴을 받으면,
+          if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
+              router.push('/login'); // 로그아웃 후 로그인 페이지로 리디렉션
+          }
+      });
     }
 
     try {
@@ -51,19 +68,19 @@ export default function useNewsdetails() {
             newsId: curNewsNo,
           },
         });
-        alert('북마크 삭제 완료');
+        Swal.fire('북마크 삭제 완료.', '', 'success');
         bookmarkStore.deleteBookmark(curNewsNo);
       } else {
         await axios.post('http://localhost:8080/api/createbookmark', {
           userId: userStore.user.userNo,
           newsId: curNewsNo,
         });
-        alert('북마크 추가 완료');
+        Swal.fire('북마크 추가 완료.', '', 'success');
         bookmarkStore.addBookmark(curNewsNo);
       }
     } catch (error) {
       if (error.response && error.response.status === 409) {
-        alert('이미 추가된 뉴스입니다.');
+        Swal.fire('이미 추가된 뉴스입니다.', '', 'warning');
       } else {
         console.error('북마크 추가 실패:', error);
       }
