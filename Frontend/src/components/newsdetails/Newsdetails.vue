@@ -11,6 +11,7 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
       <div class="left">
         <span class="date">작성 {{ news.createdDate }}</span>
         <span class="author">{{ news.author }} 기자</span>
+        
       </div>
       <div class="right">
         <span class="views">조회수 {{ news.views }}</span>
@@ -24,8 +25,9 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
     </div>
 
     <div class="content-wrapper">
+      <span class="category">{{ news.categoryName }}</span> <!-- 카테고리 추가 -->
       <div class="image-section">
-        <img :src="news.img" alt="기사 이미지" />
+        <img :src="news.image" alt="기사 이미지" />
       </div>
 
       <div class="article-content-section">

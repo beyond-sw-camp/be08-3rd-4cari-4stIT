@@ -71,10 +71,12 @@ public class MainController {
     @GetMapping("/main/{userNo}")
     public List<NewsCategoryDto> searchNews(@PathVariable("userNo") Long userNo) {
         User user = userRepository.findById(userNo).orElseThrow();
+
+        // 타입 Long 으로 수정
         List<Long> categoryIds = Arrays.stream(user.getInterest().split(","))
                 .map(Long::parseLong)
                 .toList();
-
+        // 카테고리 포함한 NewsCategoryDto로 수정
         return newsRepository.findByCategoryIdInWithCategoryName(categoryIds);
     }
 
@@ -121,14 +123,16 @@ public class MainController {
     }
 
     @GetMapping("/detail/{newsNo}")
-    public NewsDto getNewsById(@PathVariable("newsNo") Long newsId) {
+    public NewsCategoryDto getNewsById(@PathVariable("newsNo") Long newsId) {
         News news = newsRepository.findById(newsId)
                 .orElseThrow(() -> new RuntimeException("존재하지 않는 뉴스: " + newsId));
 
         news.setViews(news.getViews() + 1);
         newsRepository.save(news);
 
-        return NewsDto.fromEntity(news);
+        // 카테고리 포함한 NewsCategoryDto로 수정
+        return newsRepository.findNewsByIdWithCategory(newsId)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 뉴스: " + newsId));
     }
 
     @GetMapping("/categories")
@@ -247,10 +251,4 @@ public class MainController {
         return newsRepository.findTop3ByOrderByViewsDesc();
     }
 
-    //Todo: 뉴스 작성, 여유있으면 프론트 구현 @uzz99
-//    @PostMapping("/createnews")
-//    public void createNews(@RequestBody NewsDto newsDTO) {
-//        News news = newsDTO.toEntity();
-//        newsRepository.save(news);
-//    }
 }
