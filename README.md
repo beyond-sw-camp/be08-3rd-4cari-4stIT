@@ -26,6 +26,8 @@
 <br>
 
 ## ⚙개발 환경
+<br>
+
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"/> <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"/> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
 <br>
@@ -123,10 +125,13 @@
       <summary>로그인 상태</summary>
       <blockquote>
         <details>
-        <summary>관심사 뉴스 리스트 제공</summary>
-        </details>
+          <summary>관심사 뉴스 리스트 제공</summary>       
+
+https://github.com/user-attachments/assets/e52f4e2c-b244-41c9-9d8a-3331ce8eb772
+
+</details>
         <details>
-        <summary>상세 뉴스 페이지 → 목록 라우트</summary>
+          <summary>상세 뉴스 페이지 → 목록 라우트</summary>
         </details>
       </blockquote>
     </details>
@@ -135,10 +140,16 @@
       <blockquote>
         <details>
         <summary>전체 뉴스 리스트 제공</summary>
-        </details>
+          
+https://github.com/user-attachments/assets/e808ddb6-ca5a-433f-967c-e3c8e74f9d20
+
+  </details>
         <details>
         <summary>상세 뉴스 페이지 → 목록 라우트</summary>
-      </blockquote>
+          
+https://github.com/user-attachments/assets/717d2b6a-4dc5-4e61-b7ac-000c385f4c47
+
+  </blockquote>
     </details>
   </blockquote>
 </details>
