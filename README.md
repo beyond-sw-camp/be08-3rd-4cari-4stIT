@@ -67,10 +67,6 @@
 
 <br>
 
-## 📑 프로젝트 구조
-
-<br>
-
 ## 📑 화면 설계서
 <br>
 
@@ -192,8 +188,6 @@ https://github.com/user-attachments/assets/e808ddb6-ca5a-433f-967c-e3c8e74f9d20
   <blockquote>
     <details>
       <summary>마이페이지 라우트</summary>
-
-https://github.com/user-attachments/assets/f113781f-015e-462b-aa59-1f31e69dacef
 
   </details>
   <details>
