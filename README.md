@@ -1,3 +1,4 @@
+
 # 4stIT
 > Team - 4cari
 <br>
@@ -87,19 +88,18 @@
 
 <details>
   <summary>로그인</summary>
+
+https://github.com/user-attachments/assets/69e029f0-c102-4adb-8f8e-320a0c23a074
+
   <blockquote>
-    <details>
-      <summary>로그인 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>로그인 성공</summary>
-    </details>
-    <details>
-      <summary>로그인 실패</summary>
-    </details>
-    <details>
-      <summary>로그아웃</summary>
-    </details>
+    
+  <details>
+    <summary>로그아웃</summary>
+
+https://github.com/user-attachments/assets/256f9f90-c9c3-4844-b602-1baa4c04ea7d
+
+
+  </details>
   </blockquote>
 </details>
 
@@ -108,13 +108,18 @@
   <blockquote>
     <details>
       <summary>회원가입 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>회원가입 성공</summary>
-    </details>
-    <details>
-      <summary>회원가입 실패</summary>
-    </details>
+
+https://github.com/user-attachments/assets/6c91d390-19d6-4763-b1ae-918e4e360ad0
+
+
+  </details>
+  <details>
+    <summary>회원가입 성공</summary>
+
+https://github.com/user-attachments/assets/c8c9d39f-f8d8-4ddb-bd19-3c946df68b57
+
+
+  </details>
   </blockquote>
 </details>
 
@@ -181,17 +186,13 @@ https://github.com/user-attachments/assets/717d2b6a-4dc5-4e61-b7ac-000c385f4c47
   <summary>북마크 페이지</summary>
   <blockquote>
     <details>
-      <summary>뷱마크 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>북마크 페이지 → 상세 뉴스 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>상세 뉴스 페이지 → 목록 라우트</summary>
-    </details>
+      <summary>북마크 페이지 라우트</summary>
+
+https://github.com/user-attachments/assets/6303b597-58e8-49c7-bb3d-f221de030a00
+
+  </details>
   </blockquote>
 </details>
-
 
 <details>
   <summary>상세 뉴스 페이지</summary>
