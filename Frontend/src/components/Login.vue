@@ -3,8 +3,8 @@
     <div class="login-wrapper">
       <h2>Login</h2>
       <form @submit.prevent="handleSubmit" id="login-form">
-        <input type="text" v-model="email" placeholder="Email" required />
-        <input type="password" v-model="password" placeholder="Password" required />
+        <input type="text" v-model="id" placeholder="아이디" required />
+        <input type="password" v-model="password" placeholder="비밀번호" required />
         <input type="submit" value="Login" />
       </form>
     </div>
@@ -24,7 +24,7 @@ const router = useRouter();
 const userStore = useUserStore();
 
 // Form fields
-const email = ref('');
+const id = ref('');
 const password = ref('');
 
 // Load user from storage on component mount
@@ -35,7 +35,7 @@ onMounted(() => {
 const handleSubmit = async () => {
   try {
     const response = await axios.post('http://localhost:8080/api/login', {
-      id: email.value,
+      id: id.value,
       pwd: password.value,
     });
 
@@ -67,14 +67,14 @@ const handleSubmit = async () => {
   box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.login-wrapper>h2 {
+.login-wrapper > h2 {
   font-size: 24px;
   color: #6096b4;
   margin-bottom: 50px;
   text-align: center;
 }
 
-#login-form>input {
+#login-form > input {
   width: 100%;
   height: 48px;
   padding: 0 10px;
@@ -85,11 +85,11 @@ const handleSubmit = async () => {
   font-size: 14px;
 }
 
-#login-form>input::placeholder {
+#login-form > input::placeholder {
   color: #d2d2d2;
 }
 
-#login-form>input[type='submit'] {
+#login-form > input[type='submit'] {
   color: #fff;
   font-size: 16px;
   background-color: #6096b4;
@@ -98,29 +98,7 @@ const handleSubmit = async () => {
   transition: background-color 0.3s ease;
 }
 
-#login-form>input[type='submit']:hover {
+#login-form > input[type='submit']:hover {
   background-color: #5076a5;
-}
-
-#login-form>input[type='checkbox'] {
-  display: none;
-}
-
-#login-form>label {
-  color: #999999;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-#login-form input[type='checkbox']+label {
-  padding-left: 26px;
-  background-image: url('checkbox.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#login-form input[type='checkbox']:checked+label {
-  background-image: url('checkbox-active.png');
 }
 </style>
