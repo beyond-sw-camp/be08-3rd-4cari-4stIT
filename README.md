@@ -84,6 +84,10 @@
 ## 📑 테스트
 <details>
   <summary>검색</summary>
+
+https://github.com/user-attachments/assets/7b988982-7b1f-4918-85df-5cedde48d78f
+
+
 </details>
 
 <details>
