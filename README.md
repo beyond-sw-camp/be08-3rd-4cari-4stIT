@@ -5,6 +5,24 @@
 ## 🗂️ 프로젝트 소개
 <br>
 
+<div>
+  
+  **IT 뉴스 추천 및 검색 서비스**인 4stIT은 <br>
+사용자의 관심사에 맞는 뉴스 정보를 제공하고, 검색할 수 있는 **뉴스 서비스**입니다.<br>
+다양한 종류의 IT 정보를 개인이 전부 파악하기에는 많은 시간이 소요되는 어려움이 있습니다.<br>
+이러한 어려움을 해소하고, 사용자의 **정보 접근성 향상**에 기여하고자 4stIT 서비스를 개발하게 되었습니다.<br>
+
+따라서 4stIT은 다음과 같은 **기대효과**를 가지고 있습니다.
+
+1. **사용자 니즈에 맞는 정보 제공**<br>
+    사용자의 관심사를 기반으로 관련 뉴스를 추천, 사용자 니즈에 맞는 정보를 제공할 수 있습니다.
+2. **사용자의 정보 접근성 향상**<br>
+    4stIT이라는 통합된 하나의 서비스를 통해 다양한 주제의 뉴스에 접근할 수 있으며, 검색 기능을 통해 원하는 주제의 뉴스에 접근할 수 있습니다.
+    
+즉, 4stIT을 통해 사용자들은 편리하게 원하는 IT정보에 접근할 수 있습니다.
+
+</div>
+
 ## ⚙개발 환경
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"/> <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"/> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
