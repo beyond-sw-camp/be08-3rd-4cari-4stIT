@@ -75,6 +75,10 @@
 
 ## 📑 테스트
 <details>
+  <summary>검색</summary>
+</details>
+
+<details>
   <summary>로그인</summary>
   <blockquote>
     <details>
