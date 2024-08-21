@@ -13,6 +13,7 @@
 
 ## 📑 요구사항 명세서
 [요구사항 명세서](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=960276421#gid=960276421)
+<br><br>
 ![image](https://github.com/user-attachments/assets/4cba7f2b-a40b-4a1d-9b1e-7b3e1f1ae44a)
 ![image](https://github.com/user-attachments/assets/eab9679a-dfa1-47c3-bc43-5f50beca6b56)
 
