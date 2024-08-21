@@ -12,8 +12,11 @@ import java.util.Optional;
 
 public interface BookmarkRepository extends CrudRepository<Bookmark, Long> {
 
-    @Query("SELECT new com.fourstit.pocari.dto.BookmarkDto(b.bookmarkId, b.newsId, n.title, n.summary, n.image, b.createdDate) " +
-            "FROM Bookmark b JOIN News n ON b.newsId = n.newsId WHERE b.userId = :userId")
+    @Query("SELECT new com.fourstit.pocari.dto.BookmarkDto(b.bookmarkId, b.newsId, n.title, n.summary, c.name, n.image, b.createdDate) " +
+            "FROM Bookmark b " +
+            "JOIN News n ON b.newsId = n.newsId " +
+            "JOIN Category c ON n.categoryId = c.categoryId " +
+            "WHERE b.userId = :userId")
     List<BookmarkDto> findAllByUserId(Long userId);
 
     Optional<Bookmark> findByUserIdAndNewsId(Long userId, Long newsId);

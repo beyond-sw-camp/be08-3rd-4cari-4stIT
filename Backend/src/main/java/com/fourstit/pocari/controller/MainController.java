@@ -1,9 +1,6 @@
 package com.fourstit.pocari.controller;
 
-import com.fourstit.pocari.dto.BookmarkDto;
-import com.fourstit.pocari.dto.BookmarkRequestDto;
-import com.fourstit.pocari.dto.NewsDto;
-import com.fourstit.pocari.dto.UserDto;
+import com.fourstit.pocari.dto.*;
 import com.fourstit.pocari.entity.Bookmark;
 import com.fourstit.pocari.entity.Category;
 import com.fourstit.pocari.entity.News;
@@ -59,30 +56,29 @@ public class MainController {
     }
 
     @GetMapping("/main")
-    public List<News> newsList() {
-        return newsRepository.findAll();
+    public List<NewsCategoryDto> newsList() {
+
+        return newsRepository.findAllWithCategories();
     }
 
     @GetMapping("/main/search")
-    public List<News> searchNews(@RequestParam String query) {
-        return newsRepository.findAll().stream()
-                .filter(news -> news.getTitle().toLowerCase().contains(query.toLowerCase()) ||
-                        news.getContent().toLowerCase().contains(query.toLowerCase()))
-                .collect(Collectors.toList());
+    public List<NewsCategoryDto> searchNews(@RequestParam String query) {
+        return newsRepository.searchByQuery(query);
     }
 
     @GetMapping("/main/{userNo}")
-    public List<News> searchNews(@PathVariable("userNo") Long userNo) {
+    public List<NewsCategoryDto> searchNews(@PathVariable("userNo") Long userNo) {
         User user = userRepository.findById(userNo).orElseThrow();
-        List<Integer> categoryIds = Arrays.stream(user.getInterest().split(","))
-                .map(Integer::parseInt)
+        List<Long> categoryIds = Arrays.stream(user.getInterest().split(","))
+                .map(Long::parseLong)
                 .toList();
 
-        return newsRepository.findByCategoryIdIn(categoryIds);
+        return newsRepository.findByCategoryIdInWithCategoryName(categoryIds);
     }
 
     @GetMapping("/bookmark/{userNo}")
     public List<BookmarkDto> bookmarkList(@PathVariable("userNo") Long userId) {
+
         return bookmarkRepository.findAllByUserId(userId);
     }
 

@@ -14,6 +14,7 @@ public class BookmarkDto {
     private Long newsId;
     private String newsTitle;
     private String newsSummary;
+    private String categoryName;
     private String newsImage;
     private LocalDateTime createdDate;
 }

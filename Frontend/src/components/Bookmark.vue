@@ -1,7 +1,7 @@
   <template>
     <div id="content">
       <div class="container">
-        <h3>북마크한 뉴스</h3>
+        <h3 class="bookmark-title">북마크한 뉴스</h3>
         <div v-if="bookmarkList.length === 0" class="no-bookmark">
           <p class="message">아직 북마크한 뉴스가 없습니다.</p>
           <p class="suggestion">관심 있는 뉴스를 북마크해보세요!</p>
@@ -13,6 +13,9 @@
             :key="index"
             class="news-item"
           >
+          <!-- 카테고리 이름 추가 -->
+          <small class="category">{{ item.categoryName }}</small>
+
             <router-link :to="`/detail/${item.newsId}`">
               <img :src="item.newsImage" :alt="'뉴스 이미지 ' + (index + 1)" />
             </router-link>
@@ -97,6 +100,34 @@ body {
   margin-top: 80px;
 }
 
+.bookmark-title {
+  color: #333333;
+  text-align: center; /* 제목 중앙 정렬 */
+  margin: 10px 50px 25px 50px; /* 제목 상하 마진 (위쪽 간격 줄이기) */
+  font-size: 32px; /* 제목 폰트 크기 */
+  font-weight: bold; /* 제목 폰트 두께 */
+  background: linear-gradient(to right, #000000, #434343);
+  -webkit-background-clip: text; /* 텍스트에 그라디언트 적용 */
+  color: transparent; /* 배경 그라디언트에 텍스트 색상 숨기기 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 텍스트 그림자 */
+}
+
+/* 카테고리 스타일 */
+.category {
+  background-color: #6096b4; /* 버튼 배경색 */
+  color: #fff; /* 버튼 텍스트 색상 */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  position: absolute; /* 절대 위치 지정 */
+  top: 10px; /* 상단 여백 */
+  left: 10px; /* 좌측 여백 */
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+
 h3 {
     color: #333333;
     text-align: center;
@@ -173,6 +204,7 @@ h3 {
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.5s ease-out;
+  position: relative;
 }
 
 .news-item:hover {

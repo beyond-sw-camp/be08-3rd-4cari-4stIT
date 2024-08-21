@@ -6,10 +6,12 @@
         <div class="col-lg-6 mb-4" v-for="news in newsList" :key="news.newsId">
           <router-link :to="`/detail/${news.newsId}`" class="news-item-link">
             <div class="card bg-light border-0 h-100 custom-card1">
+              <div class="category-label">{{ news.categoryName }}</div>
               <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                 <div class="card-news1">
+                  
                   <img :src="news.image" alt="Image 4" class="card-image" />
-                  <div class="card1-text">
+                  <div class="card1-text">          
                     <h2>{{ news.title }}</h2>
                     <br />
                     <p>{{ news.content }}</p>
@@ -105,12 +107,17 @@ export default defineComponent({
   background-color: #ffffff;
   border: 2px solid #e0e9ee;
   box-shadow: 0px 6px 20px rgba(96, 150, 180, 0.4);
+  position: relative; /* 카테고리 라벨을 위치시키기 위해 상대적 위치 설정 */
 }
 
 .custom-card1:hover {
   transform: scale(1.02);
   box-shadow: 0px 8px 25px rgba(96, 150, 180, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-news1 {
+  position: relative; /* 카테고리 라벨을 상대적으로 위치시키기 위해 설정 */
 }
 
 .card-news1 img {
@@ -128,6 +135,26 @@ export default defineComponent({
   justify-content: center;
 }
 
+/* 카테고리 버튼 스타일링 */
+.category-label {
+  background-color: #6096b4; /* 버튼 배경색 */
+  color: #fff; /* 버튼 텍스트 색상 */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  position: absolute; /* 절대 위치 지정 */
+  top: 10px; /* 상단 여백 */
+  left: 10px; /* 좌측 여백 */
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.category-label:hover {
+  background-color: #507d9a; /* 호버 시 버튼 배경색 */
+  transform: scale(1.05);
+}
+
 .card1-text h2 {
   background: linear-gradient(to right, #007bff, #00c6ff);
   -webkit-background-clip: text;
@@ -142,14 +169,6 @@ export default defineComponent({
   display: -webkit-box;
   -webkit-line-clamp: 3; /* 표시할 줄 수 설정 */
   -webkit-box-orient: vertical;
-}
-
-.nav-tabs .nav-link {
-  border: none;
-}
-
-.nav-tabs .nav-link.active {
-  border-bottom: 2px solid #007bff;
 }
 
 .news-item-link {
