@@ -224,11 +224,6 @@ https://github.com/user-attachments/assets/717d2b6a-4dc5-4e61-b7ac-000c385f4c47
 </details>
 
 
-
-https://github.com/user-attachments/assets/1a2f88ca-c4e1-42ec-a2c7-8afa69dd3b53
-
-
-
 ## 📑 기타
 [기사 출처](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=379834428#gid=379834428)
 <br><br>
