@@ -56,7 +56,137 @@
 <br>
 
 ## 📑 테스트
-<br>
+<details>
+  <summary>로그인</summary>
+  <blockquote>
+    <details>
+      <summary>로그인 페이지 라우트</summary>
+    </details>
+    <details>
+      <summary>로그인 성공</summary>
+    </details>
+    <details>
+      <summary>로그인 실패</summary>
+    </details>
+    <details>
+      <summary>로그아웃</summary>
+    </details>
+  </blockquote>
+</details>
+
+<details>
+  <summary>회원가입</summary>
+  <blockquote>
+    <details>
+      <summary>회원가입 페이지 라우트</summary>
+    </details>
+    <details>
+      <summary>회원가입 성공</summary>
+    </details>
+    <details>
+      <summary>회원가입 실패</summary>
+    </details>
+  </blockquote>
+</details>
+
+<details>
+  <summary>메인페이지</summary>
+  <blockquote>
+    <details>
+      <summary>로그인 상태</summary>
+      <blockquote>
+        <details>
+        <summary>관심사 뉴스 리스트 제공</summary>
+        </details>
+        <details>
+        <summary>상세 뉴스 페이지 라우트</summary>
+        </details>
+      </blockquote>
+    </details>
+    <details>
+      <summary>로그아웃 상태</summary>
+      <blockquote>
+        <details>
+        <summary>전체 뉴스 리스트 제공</summary>
+        </details>
+        <details>
+        <summary>상세 뉴스 페이지 라우트</summary>
+      </blockquote>
+    </details>
+    <details>
+      <summary>상세 뉴스 페이지 → 목록 라우트</summary>
+    </details>
+  </blockquote>
+</details>
+
+<details>
+  <summary>마이페이지</summary>
+  <blockquote>
+    <details>
+      <summary>마이페이지 라우트</summary>
+    </details>
+    <details>
+      <summary>정보 수정</summary>
+      <blockquote>
+        <details>
+        <summary>개인정보 수정</summary>
+        </details>
+        <details>
+        <summary>비밀번호 수정</summary>
+        </details>
+        <details>
+          <summary>관심사 수정</summary>
+        </details>
+      </blockquote>
+    </details>
+  </blockquote>
+</details>
+
+<details>
+  <summary>북마크 페이지</summary>
+  <blockquote>
+    <details>
+      <summary>뷱마크 페이지 라우트</summary>
+    </details>
+    <details>
+      <summary>북마크 페이지 → 상세 뉴스 페이지 라우트</summary>
+    </details>
+    <details>
+      <summary>상세 뉴스 페이지 → 목록 라우트</summary>
+    </details>
+  </blockquote>
+</details>
+
+<details>
+  <summary>상세 뉴스 페이지</summary>
+  <blockquote>
+    <details>
+      <summary>상세 뉴스 페이지 라우트</summary>
+    </details>
+    <details>
+      <summary>새로고침 시 조회수 카운트</summary>
+    </details>
+    <details>
+      <summary>로그인 상태</summary>
+      <blockquote>
+        <details>
+        <summary>북마크 추가 및 확인</summary>
+        </details>
+        <details>
+        <summary>북마크 삭제 및 확인</summary>
+        </details>
+      </blockquote>
+    </details>
+    <details>
+      <summary>로그아웃 상태</summary>
+      <blockquote>
+        <details>
+        <summary>북마크 추가 시 로그인 페이지로 라우트</summary>
+        </details>
+      </blockquote>
+    </details>
+  </blockquote>
+</details>
 
 ## 📑 기타
 [기사 출처](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=379834428#gid=379834428)
