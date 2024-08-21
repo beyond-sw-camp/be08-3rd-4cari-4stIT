@@ -27,6 +27,8 @@ import axios from 'axios'; // axios import 추가
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useUserStore } from '@/store/user';
+import Swal from 'sweetalert2';
+
 
 // Router
 const router = useRouter();
@@ -59,7 +61,15 @@ const handleSubmit = async () => {
     router.push('/');
   } catch (error) {
     console.error('로그인 실패:', error);
-    alert('로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.');
+    Swal.fire({
+            title: '로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.',
+            text: '',
+            icon: 'error',
+            
+            confirmButtonColor: '#6096b4', // confrim 버튼 색깔 지정
+            confirmButtonText: '확인', // confirm 버튼 텍스트 지정
+            iconColor: 'red'            
+            })
   }
 };
 </script>
@@ -71,7 +81,7 @@ const handleSubmit = async () => {
 
 .login-wrapper {
   width: 400px;
-  margin: 250px auto 80px;
+  margin: 160px auto 80px;
   padding: 40px;
   background-color: #fff;
   border-radius: 8px;
