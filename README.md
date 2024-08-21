@@ -189,7 +189,7 @@ https://github.com/user-attachments/assets/e808ddb6-ca5a-433f-967c-e3c8e74f9d20
     <details>
       <summary>마이페이지 라우트</summary>
       
-https://github.com/user-attachments/assets/f113781f-015e-462b-aa59-1f31e69dacef
+https://github.com/user-attachments/assets/81294222-4507-4596-b9b3-2a7f9a1bb6ea
 
   </details>
   <details>
@@ -198,19 +198,19 @@ https://github.com/user-attachments/assets/f113781f-015e-462b-aa59-1f31e69dacef
       <details>
       <summary>개인정보 수정</summary>
 
-https://github.com/user-attachments/assets/bf619d36-28ac-47a4-888e-8a54dae01190
+https://github.com/user-attachments/assets/bff460bc-3090-4eec-9346-3fd044da1bff
 
   </details>
       <details>
       <summary>비밀번호 수정</summary>
 
-https://github.com/user-attachments/assets/2fd0afc2-d3e5-4bbb-8a60-9381b87c8068
+https://github.com/user-attachments/assets/4019d7f7-8686-40a3-b1fb-d6c5bccb180e
 
   </details>
       <details>
         <summary>관심사 수정</summary>
 
-https://github.com/user-attachments/assets/2097bae0-7d55-4acb-96b0-1a5ea4a35b3c
+https://github.com/user-attachments/assets/ec5cfa49-dfba-4612-b5a7-018e73f931ba
 
   </details>
     </blockquote>
