@@ -11,8 +11,11 @@
 ## 📑 요구사항 명세서
 [요구사항 명세서](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=960276421#gid=960276421)
 <br><br>
-![image](https://github.com/user-attachments/assets/4cba7f2b-a40b-4a1d-9b1e-7b3e1f1ae44a)
-![image](https://github.com/user-attachments/assets/eab9679a-dfa1-47c3-bc43-5f50beca6b56)
+![image](https://github.com/user-attachments/assets/41eefe0b-3f2e-4664-be20-29bf98626e2b)
+![image](https://github.com/user-attachments/assets/e209b4ec-5e16-49f8-85ee-1ca577593ecb)
+![image](https://github.com/user-attachments/assets/26a640d6-567a-4804-8c72-5267772a3a4b)
+
+
 
 <br>
 
@@ -46,6 +49,9 @@
 <br><br>
 ![image](https://github.com/user-attachments/assets/0689fab1-858f-4ef1-8857-6c7cb3a2d88f)
 
+<br>
+
+## 📑 테스트
 <br>
 
 ## 📑 기타
