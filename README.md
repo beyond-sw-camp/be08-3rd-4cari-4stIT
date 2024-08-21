@@ -218,13 +218,13 @@ https://github.com/user-attachments/assets/b6309c71-f5c6-4966-b7df-51221ff3c10c
       
   </details>
     <details>
-      <summary>북마크 -> 뉴스 목록으로 돌아가기</summary>
+      <summary>북마크 -> 뉴스 -> 목록으로 돌아가기</summary>
 
 https://github.com/user-attachments/assets/5860c63e-804c-41ca-b1e6-3ecef893443b
 
   </details>
     <details>
-      <summary>메인 목록으로 돌아가기</summary>
+      <summary>메인 -> 뉴스 -> 목록으로 돌아가기</summary>
 
 https://github.com/user-attachments/assets/21461653-fbb0-4179-a6f0-5da9ac0ea02b
 
