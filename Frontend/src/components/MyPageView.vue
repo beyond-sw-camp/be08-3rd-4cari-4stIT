@@ -96,6 +96,7 @@
 <script>
 import axios from 'axios';
 import router from '@/router';
+import Swal from 'sweetalert2';
 
 export default {
     name: 'MyPage',
@@ -156,14 +157,14 @@ export default {
                         birth: this.form.birth,
                         gender: this.form.gender
                     });
-                    alert('개인 정보가 성공적으로 수정되었습니다.');
+                    Swal.fire('개인 정보가 성공적으로 수정되었습니다.', '', 'success');
                     this.editProfileMode = false;
                 } else {
                     console.error('유효하지 않은 userNo:', this.form.id);
                 }
             } catch (error) {
                 console.error('개인 정보 수정 중 오류가 발생했습니다:', error.response.data);
-                alert('정보 수정에 실패했습니다. 다시 시도해 주세요.');
+                Swal.fire('정보 수정에 실패했습니다. 다시 시도해 주세요.', '', 'warning');
             }
         },
         async toggleInterest(categoryId) {
@@ -188,7 +189,7 @@ export default {
         },
         async changePassword() {
             if (this.passwordForm.newPassword !== this.passwordForm.confirmPassword) {
-                alert('새 비밀번호와 비밀번호 확인이 일치하지 않습니다.');
+                Swal.fire('새 비밀번호와 비밀번호 확인이 일치하지 않습니다.', '', 'warning');
                 return;
             }
 
@@ -201,13 +202,13 @@ export default {
                             newPassword: this.passwordForm.newPassword,
                         }
                     });
-                    alert('비밀번호가 성공적으로 변경되었습니다.');
+                    Swal.fire('비밀번호가 성공적으로 변경되었습니다.', '', 'success');
                 } else {
                     console.error('유효하지 않은 userNo:', this.form.id);
                 }
             } catch (error) {
                 console.error('비밀번호 변경 중 오류가 발생했습니다:', error.response.data);
-                alert('비밀번호 변경에 실패했습니다. 다시 시도해 주세요.');
+                Swal.fire('비밀번호 변경에 실패했습니다. 다시 시도해 주세요.', '', 'warning');
             }
         },
     },

@@ -163,6 +163,7 @@
 
 <script>
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 export default {
   data() {
@@ -228,12 +229,31 @@ export default {
         const response = await axios.post('http://localhost:8080/api/join', this.form);
 
         if (response.status === 201) {
-          alert('회원가입이 완료되었습니다!');
-          this.$router.push('/login');
+          Swal.fire({
+            title: '회원가입이 완료 되었습니다.',
+            text: '',
+            icon: 'success',
+            
+            confirmButtonColor: '#3085d6', // confrim 버튼 색깔 지정
+            confirmButtonText: '확인', // confirm 버튼 텍스트 지정
+            
+            }).then(result => {
+            // 만약 Promise리턴을 받으면,
+            if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
+                this.$router.push('/login'); // 로그인 페이지로 리디렉션
+            }
+          });
         }
       } catch (error) {
         console.error('회원가입 중 오류가 발생했습니다:', error);
-        alert('회원가입에 실패했습니다. 다시 시도해 주세요.');
+        Swal.fire({
+            title: '회원가입에 실패했습니다. 다시 시도해 주세요.',
+            text: '',
+            icon: 'warning',
+            
+            confirmButtonColor: '#3085d6', // confrim 버튼 색깔 지정
+            confirmButtonText: '확인', // confirm 버튼 텍스트 지정            
+            })
       }
     },
   },
