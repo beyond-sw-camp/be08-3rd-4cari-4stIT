@@ -10,6 +10,7 @@ import com.fourstit.pocari.repository.CategoryRepository;
 import com.fourstit.pocari.repository.NewsRepository;
 import com.fourstit.pocari.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -27,9 +29,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 @CrossOrigin("http://localhost:5173/")
+@Slf4j
 public class MainController {
 
-    private static final Logger log = LoggerFactory.getLogger(MainController.class);
     private final UserRepository userRepository;
     private final NewsRepository newsRepository;
     private final BookmarkRepository bookmarkRepository;
@@ -151,6 +153,8 @@ public class MainController {
         user.setBirth(userDto.getBirth());
         user.setGender(userDto.getGender());
         user.setPhone(userDto.getPhone());
+        user.setInsDate(LocalDate.now());
+        user.setUptDate(LocalDate.now());
 
         StringBuilder interest = new StringBuilder();
         for (String str : userDto.getInterest()) {
