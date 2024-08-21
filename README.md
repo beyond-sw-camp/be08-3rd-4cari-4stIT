@@ -192,34 +192,47 @@ https://github.com/user-attachments/assets/717d2b6a-4dc5-4e61-b7ac-000c385f4c47
   </blockquote>
 </details>
 
+
 <details>
   <summary>상세 뉴스 페이지</summary>
   <blockquote>
     <details>
-      <summary>상세 뉴스 페이지 라우트</summary>
-    </details>
+      <summary>상세 뉴스 페이지 라우트 및 북마크 추가/삭제</summary>
+
+https://github.com/user-attachments/assets/c1df714e-4e8a-433d-842e-0c445f0af65f
+
+  </details>
     <details>
       <summary>새로고침 시 조회수 카운트</summary>
-    </details>
+
+https://github.com/user-attachments/assets/b6309c71-f5c6-4966-b7df-51221ff3c10c
+      
+  </details>
     <details>
-      <summary>로그인 상태</summary>
-      <blockquote>
-        <details>
-        <summary>북마크 추가 및 확인</summary>
-        </details>
-        <details>
-        <summary>북마크 삭제 및 확인</summary>
-        </details>
-      </blockquote>
-    </details>
+      <summary>북마크 -> 뉴스 목록으로 돌아가기</summary>
+
+https://github.com/user-attachments/assets/5860c63e-804c-41ca-b1e6-3ecef893443b
+
+  </details>
     <details>
-      <summary>로그아웃 상태</summary>
-      <blockquote>
-        <details>
-        <summary>북마크 추가 시 로그인 페이지로 라우트</summary>
-        </details>
-      </blockquote>
-    </details>
+      <summary>메인 목록으로 돌아가기</summary>
+
+https://github.com/user-attachments/assets/21461653-fbb0-4179-a6f0-5da9ac0ea02b
+
+
+  </details>
+    
+  <details>
+      <summary>북마크 추가 시 로그인 페이지로 라우트</summary>
+
+https://github.com/user-attachments/assets/58789fef-38c6-47cf-bd75-c85f699de94a
+
+
+  </details>
+  </blockquote>
+</details>
+
+
   </blockquote>
 </details>
 
