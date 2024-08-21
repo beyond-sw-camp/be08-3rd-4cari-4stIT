@@ -174,11 +174,21 @@ public class MainController {
         userDto.setEmail(user.getEmail());
         userDto.setBirth(user.getBirth());
         userDto.setGender(user.getGender());
-        userDto.setPhone(user.getPhone());
+
+        // 전화번호 포맷팅
+        String phone = user.getPhone();
+        if (phone.length() == 11) { // "01012341234" 형식의 전화번호인 경우
+            phone = phone.substring(0, 3) + "-" + phone.substring(3, 7) + "-" + phone.substring(7);
+        } else if (phone.length() == 10) { // "0212341234" 형식의 전화번호인 경우
+            phone = phone.substring(0, 2) + "-" + phone.substring(2, 6) + "-" + phone.substring(6);
+        }
+
+        userDto.setPhone(phone);
         userDto.setInterest(Arrays.asList(user.getInterest().split(",")));
 
         return ResponseEntity.ok(userDto);
     }
+
 
     @PutMapping("/myinfo/updateUserInfo/{userNo}")
     public ResponseEntity<String> updateUserInfo(@PathVariable("userNo") Long userId, @RequestBody UserDto userDto) {

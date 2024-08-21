@@ -4,7 +4,7 @@
     <form @submit.prevent="submitForm">
       <div class="form-group">
         <label for="id">아이디</label>
-        <input type="text" v-model="form.id" id="id" required :disabled="usernameChecked" />
+        <input type="text" v-model="form.id" id="id" placeholder="아이디를 입력해주세요." required :disabled="usernameChecked" />
         <button id="btn-idChk" type="button" @click="checkUsername">중복 확인</button>
         <span v-if="usernameCheckMessage" :class="{ 'text-success': !isUsernameDuplicate, 'text-danger': isUsernameDuplicate }">
           {{ usernameCheckMessage }}
@@ -13,17 +13,17 @@
 
       <div class="form-group">
         <label for="pwd">비밀번호</label>
-        <input type="password" v-model="form.pwd" id="pwd" required />
+        <input type="password" v-model="form.pwd" id="pwd" placeholder="비밀번호를 입력해주세요." required />
       </div>
 
       <div class="form-group">
         <label for="email">이메일 주소</label>
-        <input type="email" v-model="form.email" id="email" required />
+        <input type="email" v-model="form.email" id="email" placeholder="4stIT@4cari.com" required />
       </div>
 
       <div class="form-group">
         <label for="name">이름</label>
-        <input type="text" v-model="form.name" id="name" required />
+        <input type="text" v-model="form.name" id="name" placeholder="이름을 입력해주세요." required />
       </div>
 
       <div class="form-group">
@@ -47,7 +47,7 @@
 
       <div class="form-group">
         <label for="phone">휴대전화번호</label>
-        <input type="tel" v-model="form.phone" id="phone" required />
+        <input type="tel" v-model="form.phone" id="phone" placeholder="01012345678" required maxlength="11" />
       </div>
 
       <!-- <div class="form-group">
@@ -63,7 +63,7 @@
       </div> -->
       <div class="form-group">
         <label for="interest">관심사</label>
-        <select name="interest" v-model="form.interest" id="interest" multiple size="5">
+        <select name="interest" v-model="form.interest" id="interest" multiple size="5" required>
           <option v-for="category in categories" :key="category.categoryId" :value="category.categoryId">
             {{ category.name }}
           </option>
