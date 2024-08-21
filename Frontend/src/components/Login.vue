@@ -3,13 +3,24 @@
     <div class="login-wrapper">
       <h2>Login</h2>
       <form @submit.prevent="handleSubmit" id="login-form">
-        <input type="text" v-model="id" placeholder="아이디" required />
-        <input type="password" v-model="password" placeholder="비밀번호" required />
+        <div class="input-group">
+          <div class="input-wrapper">
+            <i class="fas fa-user"></i>
+            <input type="text" v-model="id" placeholder="아이디" required />
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="input-wrapper">
+            <i class="fas fa-lock"></i>
+            <input type="password" v-model="password" placeholder="비밀번호" required />
+          </div>
+        </div>
         <input type="submit" value="Login" />
       </form>
     </div>
   </div>
 </template>
+
 
 <script setup>
 import axios from 'axios'; // axios import 추가
@@ -60,7 +71,7 @@ const handleSubmit = async () => {
 
 .login-wrapper {
   width: 400px;
-  margin: 130px auto 80px;
+  margin: 250px auto 80px;
   padding: 40px;
   background-color: #fff;
   border-radius: 8px;
@@ -74,28 +85,50 @@ const handleSubmit = async () => {
   text-align: center;
 }
 
-#login-form > input {
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #909090;
+}
+
+.input-wrapper input {
   width: 100%;
   height: 48px;
-  padding: 0 10px;
-  margin-bottom: 16px;
+  padding: 0 10px 0 40px;
   border-radius: 6px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   font-size: 14px;
 }
 
-#login-form > input::placeholder {
+.input-wrapper input::placeholder {
   color: #d2d2d2;
 }
 
 #login-form > input[type='submit'] {
+  width: 100%;
+  height: 48px;
   color: #fff;
   font-size: 16px;
   background-color: #6096b4;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 20px;
+  border-radius: 6px;
 }
 
 #login-form > input[type='submit']:hover {

@@ -18,7 +18,6 @@ export const useUserStore = defineStore('user', {
       this.user = null;
       this.isLoggedIn = false;
 
-
       localStorage.removeItem('user');
       localStorage.removeItem('isLoggedIn');
       
@@ -32,6 +31,10 @@ export const useUserStore = defineStore('user', {
       if (storedUser && storedIsLoggedIn === 'true') {
         this.user = JSON.parse(storedUser);
         this.isLoggedIn = true;
+      }
+      else {
+        this.user = null;
+        this.isLoggedIn =
       }
     },
   },

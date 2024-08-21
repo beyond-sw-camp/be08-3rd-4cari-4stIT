@@ -23,4 +23,5 @@ app.mount('#app');
 
 // 사용자 정보를 로컬 스토리지에서 복원
 const userStore = useUserStore();
+
 userStore.loadUserFromStorage(); // 사용자 정보를 로컬 스토리지에서 로드

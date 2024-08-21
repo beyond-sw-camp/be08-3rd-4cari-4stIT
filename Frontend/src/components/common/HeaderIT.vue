@@ -74,8 +74,8 @@
 
     const logout = () => {
         if (confirm('로그아웃 하시겠습니까?')) {
-        userStore.logout(); // Pinia 스토어의 logout 메서드 호출
-        router.push('/'); // 로그아웃 후 로그인 페이지로 리디렉션
+            userStore.logout(); // Pinia 스토어의 logout 메서드 호출
+            router.push('/'); // 로그아웃 후 로그인 페이지로 리디렉션
         }
     };
 
