@@ -36,9 +36,9 @@
 ## 📑 요구사항 명세서
 [요구사항 명세서](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=960276421#gid=960276421)
 <br><br>
-![image](https://github.com/user-attachments/assets/8b05c8b4-9c67-47ce-a9ca-d0552be76ab4)
-![image](https://github.com/user-attachments/assets/16b47ddb-2954-4e37-bb4d-276713b361c4)
-![image](https://github.com/user-attachments/assets/de943d27-9294-474d-9e95-997a9b85f95a)
+![image](https://github.com/user-attachments/assets/e32b0cf2-7702-4d38-9e0a-07d426e88cde)
+![image](https://github.com/user-attachments/assets/254d379b-7b84-476a-8277-394bdb8e9f98)
+![image](https://github.com/user-attachments/assets/75cb110f-cb93-4a78-ad57-197bb92dac45)
 
 
 <br>
@@ -74,10 +74,42 @@
 ## 📑 화면 설계서
 <br>
 
+- 회원가입
+  ![화면정의서 Join](https://github.com/user-attachments/assets/d5d35d2e-b084-442a-9bbe-79d9e5ebfd25)
+
+<br>
+
+- 로그인
+  ![화면정의서 Login](https://github.com/user-attachments/assets/f7c9be4b-ffc6-4f75-9208-cc84745499c6)
+
+<br>
+
+- 마이페이지
+  ![화면정의서  Mypage](https://github.com/user-attachments/assets/04fe42ee-8922-4aee-b1be-30f8228bff93)
+
+<br>
+
+- 메인
+  ![화면정의서 Main](https://github.com/user-attachments/assets/9a341114-74d9-489f-b764-ab615f788a20)
+
+<br>
+
+- 북마크
+  ![화면정의서 Bookmark](https://github.com/user-attachments/assets/55b78431-9507-463d-b76c-82b171cd5004)
+
+<br>
+
+- 뉴스 페이지
+  ![화면정의서  NewsDetail](https://github.com/user-attachments/assets/39ddbfd1-35d4-4a8e-8ef3-9fc14dd6cbcc)
+
+<br>
+
 ## 📑 테스트 케이스
 [테스트 케이스](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=477064179#gid=477064179)
 <br><br>
-![image](https://github.com/user-attachments/assets/0689fab1-858f-4ef1-8857-6c7cb3a2d88f)
+![image](https://github.com/user-attachments/assets/b088613f-a2d7-4e03-a3c2-f96d1ac9e7c3)
+![image](https://github.com/user-attachments/assets/ae2ebf73-7a71-4269-baff-4c03fc56ed57)
+
 
 <br>
 
@@ -218,13 +250,13 @@ https://github.com/user-attachments/assets/b6309c71-f5c6-4966-b7df-51221ff3c10c
       
   </details>
     <details>
-      <summary>북마크 -> 뉴스 -> 목록으로 돌아가기</summary>
+      <summary>북마크 -> 뉴스 목록으로 돌아가기</summary>
 
 https://github.com/user-attachments/assets/5860c63e-804c-41ca-b1e6-3ecef893443b
 
   </details>
     <details>
-      <summary>메인 -> 뉴스 -> 목록으로 돌아가기</summary>
+      <summary>메인 목록으로 돌아가기</summary>
 
 https://github.com/user-attachments/assets/21461653-fbb0-4179-a6f0-5da9ac0ea02b
 
@@ -252,6 +284,8 @@ https://github.com/user-attachments/assets/58789fef-38c6-47cf-bd75-c85f699de94a
 
 ## 📆 WBS
 [WBS](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=0#gid=0)
+![image](https://github.com/user-attachments/assets/ae1ed0a5-5132-4fd7-b55d-69ac2209725f)
+![image](https://github.com/user-attachments/assets/c76e1dd5-3c31-4cc5-84a2-fa69a31e63f8)
 
 <br>
 
