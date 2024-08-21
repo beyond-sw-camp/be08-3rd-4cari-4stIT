@@ -40,8 +40,10 @@
 ## 📑 테이블 명세서
 [테이블 명세서](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=373256007#gid=373256007) 
 <br><br>
-![image](https://github.com/user-attachments/assets/9845197c-a72f-4630-b0e9-3ffc87e256c3)
-![image](https://github.com/user-attachments/assets/4a6d9260-4506-4e8b-912f-4c5f0ba50103)
+![image](https://github.com/user-attachments/assets/6eb4ab10-2447-4313-b490-b61016f71e04)
+![image](https://github.com/user-attachments/assets/3a491183-09f0-4455-97c7-7eabb61381e5)
+
+
 
 <br>
 
