@@ -139,9 +139,6 @@ https://github.com/user-attachments/assets/c8c9d39f-f8d8-4ddb-bd19-3c946df68b57
 https://github.com/user-attachments/assets/e52f4e2c-b244-41c9-9d8a-3331ce8eb772
 
 </details>
-        <details>
-          <summary>상세 뉴스 페이지 → 목록 라우트</summary>
-        </details>
       </blockquote>
     </details>
     <details>
@@ -154,7 +151,7 @@ https://github.com/user-attachments/assets/e808ddb6-ca5a-433f-967c-e3c8e74f9d20
 
   </details>
         <details>
-        <summary>상세 뉴스 페이지 → 목록 라우트</summary>
+        <summary>뉴스 페이지 → 목록 라우트</summary>
           
 https://github.com/user-attachments/assets/717d2b6a-4dc5-4e61-b7ac-000c385f4c47
 
@@ -168,21 +165,33 @@ https://github.com/user-attachments/assets/717d2b6a-4dc5-4e61-b7ac-000c385f4c47
   <blockquote>
     <details>
       <summary>마이페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>정보 수정</summary>
-      <blockquote>
-        <details>
-        <summary>개인정보 수정</summary>
-        </details>
-        <details>
-        <summary>비밀번호 수정</summary>
-        </details>
-        <details>
-          <summary>관심사 수정</summary>
-        </details>
-      </blockquote>
-    </details>
+
+https://github.com/user-attachments/assets/f113781f-015e-462b-aa59-1f31e69dacef
+
+  </details>
+  <details>
+    <summary>정보 수정</summary>
+    <blockquote>
+      <details>
+      <summary>개인정보 수정</summary>
+
+https://github.com/user-attachments/assets/bf619d36-28ac-47a4-888e-8a54dae01190
+
+  </details>
+      <details>
+      <summary>비밀번호 수정</summary>
+
+https://github.com/user-attachments/assets/2fd0afc2-d3e5-4bbb-8a60-9381b87c8068
+
+  </details>
+      <details>
+        <summary>관심사 수정</summary>
+
+https://github.com/user-attachments/assets/2097bae0-7d55-4acb-96b0-1a5ea4a35b3c
+
+  </details>
+    </blockquote>
+  </details>
   </blockquote>
 </details>
 
