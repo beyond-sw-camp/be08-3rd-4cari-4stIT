@@ -29,10 +29,9 @@
 ## 📑 요구사항 명세서
 [요구사항 명세서](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=960276421#gid=960276421)
 <br><br>
-![image](https://github.com/user-attachments/assets/41eefe0b-3f2e-4664-be20-29bf98626e2b)
-![image](https://github.com/user-attachments/assets/e209b4ec-5e16-49f8-85ee-1ca577593ecb)
-![image](https://github.com/user-attachments/assets/26a640d6-567a-4804-8c72-5267772a3a4b)
-
+![image](https://github.com/user-attachments/assets/8b05c8b4-9c67-47ce-a9ca-d0552be76ab4)
+![image](https://github.com/user-attachments/assets/16b47ddb-2954-4e37-bb4d-276713b361c4)
+![image](https://github.com/user-attachments/assets/de943d27-9294-474d-9e95-997a9b85f95a)
 
 
 <br>
@@ -40,8 +39,10 @@
 ## 📑 테이블 명세서
 [테이블 명세서](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=373256007#gid=373256007) 
 <br><br>
-![image](https://github.com/user-attachments/assets/9845197c-a72f-4630-b0e9-3ffc87e256c3)
-![image](https://github.com/user-attachments/assets/4a6d9260-4506-4e8b-912f-4c5f0ba50103)
+![image](https://github.com/user-attachments/assets/6eb4ab10-2447-4313-b490-b61016f71e04)
+![image](https://github.com/user-attachments/assets/3a491183-09f0-4455-97c7-7eabb61381e5)
+
+
 
 <br>
 
