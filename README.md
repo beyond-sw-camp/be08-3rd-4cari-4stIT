@@ -122,7 +122,6 @@ https://github.com/user-attachments/assets/6c91d390-19d6-4763-b1ae-918e4e360ad0
 
 https://github.com/user-attachments/assets/c8c9d39f-f8d8-4ddb-bd19-3c946df68b57
 
-
   </details>
   </blockquote>
 </details>
@@ -150,10 +149,6 @@ https://github.com/user-attachments/assets/e52f4e2c-b244-41c9-9d8a-3331ce8eb772
 https://github.com/user-attachments/assets/e808ddb6-ca5a-433f-967c-e3c8e74f9d20
 
   </details>
-        <details>
-        <summary>뉴스 페이지 → 목록 라우트</summary>
-          
-https://github.com/user-attachments/assets/717d2b6a-4dc5-4e61-b7ac-000c385f4c47
 
   </blockquote>
     </details>
@@ -208,10 +203,10 @@ https://github.com/user-attachments/assets/6303b597-58e8-49c7-bb3d-f221de030a00
 </details>
 
 <details>
-  <summary>상세 뉴스 페이지</summary>
+  <summary>뉴스 페이지</summary>
   <blockquote>
     <details>
-      <summary>상세 뉴스 페이지 라우트 및 북마크 추가/삭제</summary>
+      <summary>뉴스 페이지 라우트 및 북마크 추가/삭제</summary>
 
 https://github.com/user-attachments/assets/c1df714e-4e8a-433d-842e-0c445f0af65f
 
@@ -237,16 +232,13 @@ https://github.com/user-attachments/assets/21461653-fbb0-4179-a6f0-5da9ac0ea02b
   </details>
     
   <details>
-      <summary>북마크 추가 시 로그인 페이지로 라우트</summary>
+      <summary>(비로그인)북마크 추가 -> 로그인 페이지로 라우트</summary>
 
 https://github.com/user-attachments/assets/58789fef-38c6-47cf-bd75-c85f699de94a
-
 
   </details>
   </blockquote>
 </details>
-
-
   </blockquote>
 </details>
 
