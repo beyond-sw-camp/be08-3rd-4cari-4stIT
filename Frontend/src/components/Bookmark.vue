@@ -121,7 +121,8 @@ body {
   font-size: 0.9em;
   position: absolute; /* 절대 위치 지정 */
   top: 10px; /* 상단 여백 */
-  left: 10px; /* 좌측 여백 */
+  left: 10px; /*좌측 여백*/
+  margin-left: 1px;
   text-align: center;
   transition: background-color 0.3s, transform 0.3s;
   z-index: 10;
@@ -194,6 +195,7 @@ h3 {
 }
 
 .news-item {
+  position: relative;
   background: linear-gradient(145deg, #ffffff, #f0f0f0);
   border: 1px solid #bdc3c7;
   border-radius: 15px;
@@ -204,7 +206,6 @@ h3 {
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.5s ease-out;
-  position: relative;
 }
 
 .news-item:hover {
