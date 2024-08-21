@@ -1,6 +1,6 @@
 <template>
     <div class="my-page-container">
-        <h2>마이페이지</h2>
+        <h2>MyPage</h2>
 
         <!-- 개인 정보 수정 섹션 -->
         <section class="profile-info-section">
@@ -56,7 +56,7 @@
 
         <!-- 비밀번호 수정 섹션 -->
         <section class="password-change-section">
-            <h3>비밀번호 수정</h3>
+            <h3>비밀번호 변경</h3>
             <form @submit.prevent="changePassword">
                 <div class="form-group">
                     <label for="current-password">현재 비밀번호</label>
@@ -79,7 +79,7 @@
 
         <!-- 관심사 수정 섹션 -->
         <section class="interest-edit-section">
-            <h3>관심사 수정</h3>
+            <h3>관심사</h3>
             <div class="interest-buttons">
                 <button 
                     v-for="category in sortedCategories" 
@@ -236,43 +236,62 @@ export default {
     max-width: 800px;
     margin: 100px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    font-size: 18px; /* 기본 폰트 사이즈 */
 }
 
-h2,
-h3 {
+h2 {
     text-align: center;
+    font-size: 24px;
+}
+
+.profile-info-section,
+.password-change-section,
+.interest-edit-section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* 배경색 추가 */
+}
+
+.profile-info-section h3,
+.password-change-section h3,
+.interest-edit-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .form-group {
     margin-bottom: 15px;
+    font-size: 18px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    font-size: 16px;
 }
 
 input[type='text'],
 input[type='email'],
 input[type='tel'],
 input[type='date'],
-input[type='password'],
-select {
+input[type='password'] {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 18px;
 }
 
 .save-button {
@@ -285,21 +304,6 @@ button {
 
 .edit-button {
     background-color: #93bfcf;
-}
-
-.profile-info-section,
-.password-change-section,
-.interest-edit-section {
-    margin-top: 30px;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-li {
-    margin-bottom: 10px;
 }
 
 .interest-buttons {
@@ -316,7 +320,8 @@ li {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px;
+    padding: 12px;
+    font-size: 16px;
 }
 
 .interest-buttons button.selected {
