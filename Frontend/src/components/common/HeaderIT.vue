@@ -1,65 +1,51 @@
 <template>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <nav class="navbar navbar-expand-lg bg-navbar fixed-top">
-    <div class="container px-lg-5">
-        <RouterLink class="navbar-brand" :to="{ name: 'main' }" style="font-size: 20px; color: white">4ST-IT</RouterLink>
-        <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        >
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="d-flex justify-content-center flex-grow-1">
-            <form class="search-box" @submit.prevent="onSearch">
-            <input class="search-txt" v-model="searchQuery" type="text" placeholder="검색어를 입력하세요." />
-            <button class="search-button" type="submit">
-                <span class="material-symbols-outlined">search</span>
+        <div class="container px-lg-5">
+            <RouterLink class="navbar-brand" :to="{ name: 'main' }" style="font-size: 20px; color: white">4ST-IT</RouterLink>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
             </button>
-            </form>
-        </div>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li v-if="!isLoggedIn" class="nav-item">
-            <RouterLink class="nav-link" :to="{ name: 'JoinView' }" style="font-size: 15px; color: white">회원가입</RouterLink>
-            </li>
-
-            <!--
-                    li v-if="!isLoggedIn" class="nav-item">
-                    -->
-
-            <!-- <li v-if="!isLoggedIn" class="nav-item">
-                    <a class="nav-link" href="#!" style="font-size: 15px;" @click="showLoginModal">로그인</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex flex-grow-1 justify-content-center" id="search">
+                    <form class="search-box" @submit.prevent="onSearch">
+                        <input class="search-txt" v-model="searchQuery" type="text" placeholder="검색어를 입력하세요." />
+                        <button class="search-button" type="submit">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li v-if="!isLoggedIn" class="nav-item">
+                        <RouterLink class="nav-link" :to="{ name: 'JoinView' }" style="font-size: 15px; color: white">회원가입</RouterLink>
+                    </li>
+                    <li v-if="!isLoggedIn" class="nav-item">
+                        <RouterLink class="nav-link" :to="{ name: 'login' }" style="font-size: 15px; color: white">로그인</RouterLink>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
-                    <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px;">마이페이지</RouterLink>
+                        <RouterLink class="nav-link" :to="{ name: 'bookmark' }" style="font-size: 15px; color: white">북마크</RouterLink>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
-                    <a class="nav-link" href="#!" style="font-size: 15px;" @click="logout">로그아웃</a> -->
-
-            <li v-if="!isLoggedIn" class="nav-item">
-            <RouterLink class="nav-link" :to="{ name: 'login' }" style="font-size: 15px; color: white">로그인</RouterLink>
-            </li>
-            <li v-if="isLoggedIn" class="nav-item">
-            <RouterLink class="nav-link" :to="{ name: 'bookmark' }" style="font-size: 15px; color: white">북마크</RouterLink>
-            </li>
-            <li v-if="isLoggedIn" class="nav-item">
-            <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px; color: white">마이페이지</RouterLink>
-            </li>
-            <li v-if="isLoggedIn" class="nav-item">
-            <a class="nav-link" href="#!" style="font-size: 15px; color: white" @click="logout">로그아웃</a>
-            </li>
-        </ul>
+                        <RouterLink class="nav-link" :to="{ name: 'MyPageView' }" style="font-size: 15px; color: white">마이페이지</RouterLink>
+                    </li>
+                    <li v-if="isLoggedIn" class="nav-item">
+                        <a class="nav-link" href="#!" style="font-size: 15px; color: white" @click="logout">로그아웃</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- <RouterLink class="nav-link" :to="{ name: 'bookmark' }" style="font-size: 15px">북마크로 이동</RouterLink> -->
-    </div>
     </nav>
-    </template>
-
+</template>
     <script>
     import { defineComponent, ref, computed, onMounted } from 'vue';
     import { useRouter } from 'vue-router';
@@ -105,26 +91,27 @@
 
     <style scoped>
     .navbar-brand {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-bottom: 0;
-    padding: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 0;
+        padding: 0;
     }
 
     .search-box {
-    display: flex;
-    align-items: center;
+        display: flex;
+        align-items: center;
     }
 
     .search-txt {
-    padding: 5px;
-    font-size: 14px;
+        flex: 1;
+        padding: 5px;
+        font-size: 14px;
     }
 
     .search-button {
-    background: none;
-    border: none;
-    cursor: pointer;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
     </style>
