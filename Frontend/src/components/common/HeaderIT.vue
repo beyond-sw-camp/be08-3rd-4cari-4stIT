@@ -9,7 +9,7 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
-                aria-expanded="false"
+                aria-expanded="false"   
                 aria-label="Toggle navigation"
             >
                 <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
                     </form>
                 </div>
             </div>
-            <div class="custom-ul">
+            <div class="navbar-nav-wrapper">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li v-if="!isLoggedIn" class="nav-item">
                         <RouterLink class="nav-link custom-nav-link" :to="{ name: 'JoinView' }">회원가입</RouterLink>
@@ -89,44 +89,70 @@
     });
     </script>
 
-    <style scoped>
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        margin-bottom: 0;
-        padding: 0;
-    }
+<style scoped>
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #6096B4;
+}
 
-    .search-box {
-        display: flex;
-        align-items: center;
-    }
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 0;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-    .search-txt {
-        flex: 1;
-        padding: 5px;
-        font-size: 14px;
-    }
 
-    .search-button {
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
+.navbar-brand-custom {
+    left: 10%;
+}
 
-    .custom-navbar-brand{
-        font-size: 20px; 
-        color: white; 
-        margin-left: -180px !important; 
-    }
+.search-box {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    .custom-nav-link {
-        font-size: 15px;
-        color: white
-    }
+.search-txt {
+    flex: 1;
+    padding: 5px;
+    font-size: 14px;
+}
 
-    .custom-ul {
-        margin-right: -250px;
-    }
-    </style>
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-navbar-brand {
+    font-size: 20px; 
+    color: white;
+}
+
+.navbar-nav-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.custom-nav-link {
+    font-size: 15px;
+    color: white;
+}
+
+</style>
