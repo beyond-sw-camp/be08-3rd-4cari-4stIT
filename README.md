@@ -121,7 +121,7 @@
         <summary>관심사 뉴스 리스트 제공</summary>
         </details>
         <details>
-        <summary>상세 뉴스 페이지 라우트</summary>
+        <summary>상세 뉴스 페이지 → 목록 라우트</summary>
         </details>
       </blockquote>
     </details>
@@ -132,11 +132,8 @@
         <summary>전체 뉴스 리스트 제공</summary>
         </details>
         <details>
-        <summary>상세 뉴스 페이지 라우트</summary>
+        <summary>상세 뉴스 페이지 → 목록 라우트</summary>
       </blockquote>
-    </details>
-    <details>
-      <summary>상세 뉴스 페이지 → 목록 라우트</summary>
     </details>
   </blockquote>
 </details>
