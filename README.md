@@ -85,7 +85,7 @@
 <br>
 
 - 마이페이지
-  ![화면정의서  Mypage](https://github.com/user-attachments/assets/04fe42ee-8922-4aee-b1be-30f8228bff93)
+  ![Group 5 (1)](https://github.com/user-attachments/assets/7e262519-76b7-420d-a7ba-e79bba26cfe2)
 
 <br>
 
