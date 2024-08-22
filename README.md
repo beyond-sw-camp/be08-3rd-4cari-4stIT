@@ -3,6 +3,13 @@
 > Team - 4cari
 <br>
 
+## 👨‍👩‍👧‍👦 팀원
+
+[김나현]|[이유진]|[장현준]|[전현규]|[조은희]|[홍석민]|
+------|------|------|------------------|--------------------|------|
+<img alt="김나현" src="" width="400px"/> | <img alt="이유진" src="" width="400px"/> | <img alt="장현준" src="" width="400px"/> | <img alt="전현규" src="" width="400px"/> | <img alt="조은희" src="" width="400px"/> | <img alt="홍석민" src="" width="400px"/> | 
+<br>
+
 ## 🗂️ 프로젝트 소개
 <br>
 
@@ -284,13 +291,6 @@ https://github.com/user-attachments/assets/8111a7f8-2e4f-43a9-8fff-5a1ad6b491ec
 ![image](https://github.com/user-attachments/assets/ae1ed0a5-5132-4fd7-b55d-69ac2209725f)
 ![image](https://github.com/user-attachments/assets/c76e1dd5-3c31-4cc5-84a2-fa69a31e63f8)
 
-<br>
-
-## 👨‍👩‍👧‍👦 팀원
-
-[김나현]|[이유진]|[장현준]|[전현규]|[조은희]|[홍석민]|
-------|------|------|------------------|--------------------|------|
-<img alt="김나현" src="" width="400px"/> | <img alt="이유진" src="" width="400px"/> | <img alt="장현준" src="" width="400px"/> | <img alt="전현규" src="" width="400px"/> | <img alt="조은희" src="" width="400px"/> | <img alt="홍석민" src="" width="400px"/> | 
 <br>
 
 ## 📚 회고
