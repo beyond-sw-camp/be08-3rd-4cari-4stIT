@@ -253,14 +253,14 @@ https://github.com/user-attachments/assets/598f4450-5bb0-4620-b6ce-bdf69203b1dc
 
   </details>
     <details>
-      <summary>북마크 -> 뉴스 목록으로 돌아가기</summary>
+      <summary>북마크 -> 뉴스 -> 북마크 목록으로 돌아가기</summary>
 
 
 https://github.com/user-attachments/assets/e93db8c0-3ae2-4c01-9e4e-4611d0b55196
 
   </details>
     <details>
-      <summary>메인 목록으로 돌아가기</summary>
+      <summary>메인 -> 목록으로 돌아가기</summary>
 
 
 https://github.com/user-attachments/assets/a13f19c5-2889-4df1-bb7d-e20fea2b6aa5
@@ -270,7 +270,7 @@ https://github.com/user-attachments/assets/a13f19c5-2889-4df1-bb7d-e20fea2b6aa5
   <details>
       <summary>(비로그인)북마크 추가 -> 로그인 페이지로 라우트</summary>
 
-https://github.com/user-attachments/assets/8111a7f8-2e4f-43a9-8fff-5a1ad6b491ec
+https://github.com/user-attachments/assets/a76ec058-72e0-47b3-9ef9-90f6567a36a8
 
   </details>
   </blockquote>
