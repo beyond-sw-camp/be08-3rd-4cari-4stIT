@@ -7,7 +7,7 @@
 
 [김나현]|[이유진]|[장현준]|[전현규]|[조은희]|[홍석민]|
 ------|------|------|------------------|--------------------|------|
-<img alt="김나현" src="" width="400px"/> | <img alt="이유진" src="" width="400px"/> | <img alt="장현준" src="" width="400px"/> | <img alt="전현규" src="" width="400px"/> | <img alt="조은희" src="" width="400px"/> | <img alt="홍석민" src="" width="400px"/> | 
+<img src="https://github.com/user-attachments/assets/5154f159-8780-4b5d-a3b7-1286a4904357" width="200px"> | <img src="https://github.com/user-attachments/assets/0b61bfb0-9f7f-4529-8764-e8ad451263ce" width="200px"/> | <img src="https://github.com/user-attachments/assets/3ac61e64-cb39-432c-b1fd-25774bf347c0" width="230px"/> | <img src="https://github.com/user-attachments/assets/2df1657e-ec0f-4b23-910d-f858d456552a" width="200px"/> | <img src="https://github.com/user-attachments/assets/b3209bfe-052a-4974-9fd3-fc8da7562c26" width="210px"/> | <img src="https://github.com/user-attachments/assets/ed1c51a9-771b-4774-ba5f-34c57e10625f" width="150px"/> | 
 <br>
 
 ## 🗂️ 프로젝트 소개
@@ -34,9 +34,12 @@
 <br>
 
 ## ⚙개발 환경
-<br>
-
-<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"/> <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"/> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+### [ FrontEnd ]
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
+### [ BackEnd ]
+<img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"/>
+### [ Tool ]
+<img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/> <img src= "https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"> <img alt="IntelliJ" src="https://img.shields.io/badge/IntelliJ IDEA-%23FF9900?style=for-the-badge&logo=intellij idea&logoColor=white" /> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
 <br>
 
