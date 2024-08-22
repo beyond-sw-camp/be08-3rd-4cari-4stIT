@@ -3,7 +3,7 @@
         <div class="container px-lg-5" style="margin-top: 80px;">
             <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                 <swiper :space-between="30" :centeredSlides="true" :autoplay="autoplayOptions" :navigation="true"
-                    :loop="true" :pagination="{
+                    :pagination="{
                         clickable: true
                     }" :modules="modules" class="swiper">
                     <swiper-slide v-for="(news, index) in newsTop3" :key="index">
