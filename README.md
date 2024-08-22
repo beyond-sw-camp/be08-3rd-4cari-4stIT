@@ -1,6 +1,9 @@
 
 # 4stIT
-> Team - 4cari
+> ### Team - 4cari
+![readme_](https://github.com/user-attachments/assets/d9138c92-e2fe-40c7-9c2b-ff7889776b8e)
+
+
 <br>
 
 ## 👨‍👩‍👧‍👦 팀원
