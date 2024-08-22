@@ -1,3 +1,4 @@
+
 # 4stIT
 > Team - 4cari
 <br>
@@ -23,15 +24,21 @@
 
 </div>
 
+<br>
+
 ## ⚙개발 환경
+<br>
+
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"/> <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"/> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+
+<br>
 
 ## 📑 요구사항 명세서
 [요구사항 명세서](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=960276421#gid=960276421)
 <br><br>
-![image](https://github.com/user-attachments/assets/8b05c8b4-9c67-47ce-a9ca-d0552be76ab4)
-![image](https://github.com/user-attachments/assets/16b47ddb-2954-4e37-bb4d-276713b361c4)
-![image](https://github.com/user-attachments/assets/de943d27-9294-474d-9e95-997a9b85f95a)
+![image](https://github.com/user-attachments/assets/e32b0cf2-7702-4d38-9e0a-07d426e88cde)
+![image](https://github.com/user-attachments/assets/254d379b-7b84-476a-8277-394bdb8e9f98)
+![image](https://github.com/user-attachments/assets/75cb110f-cb93-4a78-ad57-197bb92dac45)
 
 
 <br>
@@ -60,40 +67,71 @@
 
 <br>
 
-## 📑 프로젝트 구조
+## 📑 화면 설계서
+<br>
+
+- 회원가입
+  ![화면정의서 Join](https://github.com/user-attachments/assets/d5d35d2e-b084-442a-9bbe-79d9e5ebfd25)
 
 <br>
 
-## 📑 화면 설계서
+- 로그인
+  ![화면정의서 Login](https://github.com/user-attachments/assets/f7c9be4b-ffc6-4f75-9208-cc84745499c6)
+
+<br>
+
+- 마이페이지
+  ![Group 5 (1)](https://github.com/user-attachments/assets/7e262519-76b7-420d-a7ba-e79bba26cfe2)
+
+<br>
+
+- 메인
+  ![화면정의서 Main](https://github.com/user-attachments/assets/9a341114-74d9-489f-b764-ab615f788a20)
+
+<br>
+
+- 북마크
+  ![화면정의서 Bookmark](https://github.com/user-attachments/assets/55b78431-9507-463d-b76c-82b171cd5004)
+
+<br>
+
+- 뉴스 페이지
+  ![화면정의서  NewsDetail](https://github.com/user-attachments/assets/39ddbfd1-35d4-4a8e-8ef3-9fc14dd6cbcc)
+
 <br>
 
 ## 📑 테스트 케이스
 [테스트 케이스](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=477064179#gid=477064179)
 <br><br>
-![image](https://github.com/user-attachments/assets/0689fab1-858f-4ef1-8857-6c7cb3a2d88f)
+![image](https://github.com/user-attachments/assets/b088613f-a2d7-4e03-a3c2-f96d1ac9e7c3)
+![image](https://github.com/user-attachments/assets/ae2ebf73-7a71-4269-baff-4c03fc56ed57)
+
 
 <br>
 
 ## 📑 테스트
 <details>
   <summary>검색</summary>
+
+https://github.com/user-attachments/assets/7b988982-7b1f-4918-85df-5cedde48d78f
+
+
 </details>
 
 <details>
   <summary>로그인</summary>
+
+https://github.com/user-attachments/assets/69e029f0-c102-4adb-8f8e-320a0c23a074
+
   <blockquote>
-    <details>
-      <summary>로그인 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>로그인 성공</summary>
-    </details>
-    <details>
-      <summary>로그인 실패</summary>
-    </details>
-    <details>
-      <summary>로그아웃</summary>
-    </details>
+    
+  <details>
+    <summary>로그아웃</summary>
+
+https://github.com/user-attachments/assets/256f9f90-c9c3-4844-b602-1baa4c04ea7d
+
+
+  </details>
   </blockquote>
 </details>
 
@@ -102,13 +140,17 @@
   <blockquote>
     <details>
       <summary>회원가입 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>회원가입 성공</summary>
-    </details>
-    <details>
-      <summary>회원가입 실패</summary>
-    </details>
+
+https://github.com/user-attachments/assets/6c91d390-19d6-4763-b1ae-918e4e360ad0
+
+
+  </details>
+  <details>
+    <summary>회원가입 성공</summary>
+
+https://github.com/user-attachments/assets/c8c9d39f-f8d8-4ddb-bd19-3c946df68b57
+
+  </details>
   </blockquote>
 </details>
 
@@ -119,11 +161,11 @@
       <summary>로그인 상태</summary>
       <blockquote>
         <details>
-        <summary>관심사 뉴스 리스트 제공</summary>
-        </details>
-        <details>
-        <summary>상세 뉴스 페이지 → 목록 라우트</summary>
-        </details>
+          <summary>관심사 뉴스 리스트 제공</summary>       
+
+https://github.com/user-attachments/assets/e52f4e2c-b244-41c9-9d8a-3331ce8eb772
+
+</details>
       </blockquote>
     </details>
     <details>
@@ -131,10 +173,12 @@
       <blockquote>
         <details>
         <summary>전체 뉴스 리스트 제공</summary>
-        </details>
-        <details>
-        <summary>상세 뉴스 페이지 → 목록 라우트</summary>
-      </blockquote>
+          
+https://github.com/user-attachments/assets/e808ddb6-ca5a-433f-967c-e3c8e74f9d20
+
+  </details>
+
+  </blockquote>
     </details>
   </blockquote>
 </details>
@@ -144,21 +188,33 @@
   <blockquote>
     <details>
       <summary>마이페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>정보 수정</summary>
-      <blockquote>
-        <details>
-        <summary>개인정보 수정</summary>
-        </details>
-        <details>
-        <summary>비밀번호 수정</summary>
-        </details>
-        <details>
-          <summary>관심사 수정</summary>
-        </details>
-      </blockquote>
-    </details>
+      
+https://github.com/user-attachments/assets/81294222-4507-4596-b9b3-2a7f9a1bb6ea
+
+  </details>
+  <details>
+    <summary>정보 수정</summary>
+    <blockquote>
+      <details>
+      <summary>개인정보 수정</summary>
+
+https://github.com/user-attachments/assets/bff460bc-3090-4eec-9346-3fd044da1bff
+
+  </details>
+      <details>
+      <summary>비밀번호 수정</summary>
+
+https://github.com/user-attachments/assets/4019d7f7-8686-40a3-b1fb-d6c5bccb180e
+
+  </details>
+      <details>
+        <summary>관심사 수정</summary>
+
+https://github.com/user-attachments/assets/ec5cfa49-dfba-4612-b5a7-018e73f931ba
+
+  </details>
+    </blockquote>
+  </details>
   </blockquote>
 </details>
 
@@ -166,52 +222,54 @@
   <summary>북마크 페이지</summary>
   <blockquote>
     <details>
-      <summary>뷱마크 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>북마크 페이지 → 상세 뉴스 페이지 라우트</summary>
-    </details>
-    <details>
-      <summary>상세 뉴스 페이지 → 목록 라우트</summary>
-    </details>
+      <summary>북마크 페이지 라우트</summary>
+
+https://github.com/user-attachments/assets/6303b597-58e8-49c7-bb3d-f221de030a00
+
+  </details>
   </blockquote>
 </details>
 
 <details>
-  <summary>상세 뉴스 페이지</summary>
+  <summary>뉴스 페이지</summary>
   <blockquote>
     <details>
-      <summary>상세 뉴스 페이지 라우트</summary>
-    </details>
+      <summary>뉴스 페이지 라우트 및 북마크 추가/삭제</summary>
+
+https://github.com/user-attachments/assets/ccbdf0e4-3b03-4fe6-8341-b4bcdb614712
+
+  </details>
     <details>
       <summary>새로고침 시 조회수 카운트</summary>
-    </details>
+
+https://github.com/user-attachments/assets/598f4450-5bb0-4620-b6ce-bdf69203b1dc
+
+  </details>
     <details>
-      <summary>로그인 상태</summary>
-      <blockquote>
-        <details>
-        <summary>북마크 추가 및 확인</summary>
-        </details>
-        <details>
-        <summary>북마크 삭제 및 확인</summary>
-        </details>
-      </blockquote>
-    </details>
+      <summary>북마크 -> 뉴스 목록으로 돌아가기</summary>
+
+
+https://github.com/user-attachments/assets/e93db8c0-3ae2-4c01-9e4e-4611d0b55196
+
+  </details>
     <details>
-      <summary>로그아웃 상태</summary>
-      <blockquote>
-        <details>
-        <summary>북마크 추가 시 로그인 페이지로 라우트</summary>
-        </details>
-      </blockquote>
-    </details>
+      <summary>메인 목록으로 돌아가기</summary>
+
+
+https://github.com/user-attachments/assets/a13f19c5-2889-4df1-bb7d-e20fea2b6aa5
+
+  </details>
+    
+  <details>
+      <summary>(비로그인)북마크 추가 -> 로그인 페이지로 라우트</summary>
+
+https://github.com/user-attachments/assets/8111a7f8-2e4f-43a9-8fff-5a1ad6b491ec
+
+  </details>
   </blockquote>
 </details>
-
-
-
-https://github.com/user-attachments/assets/1a2f88ca-c4e1-42ec-a2c7-8afa69dd3b53
-
+  </blockquote>
+</details>
 
 
 ## 📑 기타
@@ -223,6 +281,8 @@ https://github.com/user-attachments/assets/1a2f88ca-c4e1-42ec-a2c7-8afa69dd3b53
 
 ## 📆 WBS
 [WBS](https://docs.google.com/spreadsheets/d/1TyRsbSeW4v-V-AyeoBwzd_29XmxtEqnAE0FZL05jrjU/edit?gid=0#gid=0)
+![image](https://github.com/user-attachments/assets/ae1ed0a5-5132-4fd7-b55d-69ac2209725f)
+![image](https://github.com/user-attachments/assets/c76e1dd5-3c31-4cc5-84a2-fa69a31e63f8)
 
 <br>
 
